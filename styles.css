@@ -3963,57 +3963,274 @@ body {
     .enterprise-transform {
         height: auto;
         min-height: 100vh;
+        padding-bottom: 60px;
+        overflow: hidden; /* Prevent horizontal scroll */
+        margin-left: 0; /* Reset negative margins */
+        margin-right: 0;
+        width: 100vw;
     }
     
     .floating-pool-container {
-        height: auto;
+        padding: 80px 10px 40px;
         min-height: 100vh;
-        padding: 120px 20px 40px;
+        position: relative;
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden; /* Contain floating elements */
     }
     
     .floating-cards-pool {
         position: relative;
+        width: 100%;
+        max-width: 100%;
         height: auto;
+        min-height: calc(100vh - 120px);
+        display: block;
+        margin: 0 auto;
+        overflow: visible;
+        padding: 20px 0;
     }
     
-    .floating-row {
-        position: relative;
-        top: auto !important;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-    
+    /* Mobile floating cards with constrained positioning */
     .floating-card {
+        position: absolute !important;
         width: 140px;
         height: 140px;
-        margin: 8px;
+        animation: float-mobile-gentle 6s ease-in-out infinite;
+        transform: translate(-50%, -50%);
+        z-index: var(--z-index, 1);
     }
     
+    /* Constrained card positioning to prevent overflow */
+    .floating-card[data-industry="logistics"] {
+        top: 15%;
+        left: 30%; /* Moved inward */
+        animation-delay: 0s;
+    }
+    
+    .floating-card[data-industry="healthcare"] {
+        top: 15%;
+        left: 70%; /* Moved inward */
+        animation-delay: 1s;
+    }
+    
+    .floating-card[data-industry="service"] {
+        top: 30%;
+        left: 50%;
+        animation-delay: 2s;
+        z-index: 5; /* Higher z-index for center card */
+    }
+    
+    .floating-card[data-industry="inventory"] {
+        top: 45%;
+        left: 30%; /* Moved inward */
+        animation-delay: 3s;
+    }
+    
+    .floating-card[data-industry="hospitality"] {
+        top: 45%;
+        left: 70%; /* Moved inward */
+        animation-delay: 4s;
+    }
+    
+    .floating-card[data-industry="banking"] {
+        top: 60%;
+        left: 50%;
+        animation-delay: 5s;
+    }
+    
+    .floating-card[data-industry="ecommerce"] {
+        top: 75%;
+        left: 30%; /* Moved inward */
+        animation-delay: 6s;
+    }
+    
+    .floating-card[data-industry="education"] {
+        top: 75%;
+        left: 70%; /* Moved inward */
+        animation-delay: 7s;
+    }
+    
+    /* Gentler floating animation for mobile */
+    @keyframes float-mobile-gentle {
+        0%, 100% {
+            transform: translate(-50%, -50%) translateY(0) rotate(0deg);
+        }
+        25% {
+            transform: translate(-50%, -50%) translateY(-5px) rotate(1deg);
+        }
+        50% {
+            transform: translate(-50%, -50%) translateY(2px) rotate(-0.5deg);
+        }
+        75% {
+            transform: translate(-50%, -50%) translateY(-3px) rotate(0.5deg);
+        }
+    }
+    
+    /* Always show orbital icons on mobile */
+    .floating-card .orbital-icon {
+        opacity: 1 !important;
+        pointer-events: all !important;
+        transition: none !important;
+    }
+    
+    /* Mobile orbital icon adjustments - ensure they don't overflow */
     .orbital-icon {
-        width: 24px;
-        height: 24px;
-        font-size: 11px;
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     
-    .orbital-icon.north { top: -12px; }
-    .orbital-icon.east { right: -12px; }
-    .orbital-icon.south { bottom: -12px; }
-    .orbital-icon.west { left: -12px; }
-    
-    .orbital-tooltip {
-        font-size: 10px;
-        padding: 4px 10px;
+    .orbital-icon.north { 
+        top: -14px; 
+        transform: translateX(-50%);
+    }
+    .orbital-icon.east { 
+        right: -14px; 
+        transform: translateY(-50%);
+    }
+    .orbital-icon.south { 
+        bottom: -14px; 
+        transform: translateX(-50%);
+    }
+    .orbital-icon.west { 
+        left: -14px; 
+        transform: translateY(-50%);
     }
     
+    /* Ensure orbital icons maintain position during hover/active */
+    .orbital-icon.north:hover,
+    .orbital-icon.north:active { 
+        transform: translateX(-50%) translateY(-1px) scale(1.05); 
+    }
+    .orbital-icon.south:hover,
+    .orbital-icon.south:active { 
+        transform: translateX(-50%) translateY(1px) scale(1.05); 
+    }
+    .orbital-icon.east:hover,
+    .orbital-icon.east:active { 
+        transform: translateY(-50%) translateX(1px) scale(1.05); 
+    }
+    .orbital-icon.west:hover,
+    .orbital-icon.west:active { 
+        transform: translateY(-50%) translateX(-1px) scale(1.05); 
+    }
+    
+    /* Card core adjustments for mobile */
+    .floating-card .card-core {
+        padding: 18px;
+        box-shadow: 
+            0 4px 20px rgba(0,0,0,0.15),
+            0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .industry-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .industry-title {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+    
+    /* Mobile-specific info button highlight */
+    .orbital-icon.info-btn {
+        background: rgba(33, 150, 243, 0.25);
+        border: 2px solid rgba(33, 150, 243, 0.5);
+        animation: mobilePulse 2s ease-in-out infinite;
+    }
+    
+    /* Ensure section header stays at top */
     .enterprise-transform .section-header {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        margin-bottom: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        width: 100%;
+        max-width: 100vw;
+        margin: 0;
+        padding: 15px 20px;
+        background: rgba(10, 11, 15, 0.95);
+        border-radius: 0 0 25px 25px;
+    }
+    
+    /* Prevent ambient elements from causing overflow */
+    .ambient-bubble,
+    .ambient-glow {
+        display: none; /* Hide on mobile to prevent overflow */
     }
 }
 
+/* Extra small devices */
+@media (max-width: 480px) {
+    .floating-card {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* Even more constrained positioning for very small screens */
+    .floating-card[data-industry="logistics"],
+    .floating-card[data-industry="ecommerce"] {
+        left: 33%;
+    }
+    
+    .floating-card[data-industry="healthcare"],
+    .floating-card[data-industry="education"] {
+        left: 67%;
+    }
+    
+    .orbital-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+    }
+    
+    .orbital-icon.north { top: -13px; }
+    .orbital-icon.east { right: -13px; }
+    .orbital-icon.south { bottom: -13px; }
+    .orbital-icon.west { left: -13px; }
+    
+    .industry-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+    
+    .industry-title {
+        font-size: 11px;
+    }
+    
+    .floating-card .card-core {
+        padding: 16px;
+    }
+}
+
+/* Prevent horizontal scroll on all parent elements */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    
+    main,
+    .main-wrapper {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+}
+/* Enterprise wrapper to prevent overflow */
+.enterprise-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
 /* Industry Modal */
 .industry-modal {
     position: fixed;
@@ -4336,35 +4553,232 @@ body {
 }
 
 @media (max-width: 768px) {
-    .enterprise-transform {
+     .enterprise-transform {
         height: auto;
         min-height: 100vh;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
+        overflow: visible; /* Allow cards to float freely */
     }
     
     .floating-pool-container {
-        flex-wrap: wrap;
-        padding-top: 80px;
+        padding: 80px 20px 40px;
+        min-height: 100vh;
+        position: relative;
     }
     
     .floating-cards-pool {
+        position: relative;
+        width: 100%;
         height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px 0;
+        min-height: calc(100vh - 120px);
+        display: block; /* Change from flex to block for absolute positioning */
     }
     
+    /* Mobile floating cards with absolute positioning */
     .floating-card {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        width: 140px;
-        height: 140px;
-        margin: 10px;
-        animation: float-mobile 6s ease-in-out infinite;
+        position: absolute !important;
+        width: 160px;
+        height: 160px;
+        animation: float-mobile 8s ease-in-out infinite;
+        transform: translate(-50%, -50%);
+    }
+    
+    /* Individual card positioning for mobile */
+    .floating-card[data-industry="logistics"] {
+        top: 15%;
+        left: 25%;
+        animation-delay: 0s;
+    }
+    
+    .floating-card[data-industry="healthcare"] {
+        top: 15%;
+        left: 75%;
+        animation-delay: 1s;
+    }
+    
+    .floating-card[data-industry="service"] {
+        top: 35%;
+        left: 50%;
+        animation-delay: 2s;
+    }
+    
+    .floating-card[data-industry="inventory"] {
+        top: 55%;
+        left: 25%;
+        animation-delay: 3s;
+    }
+    
+    .floating-card[data-industry="hospitality"] {
+        top: 55%;
+        left: 75%;
+        animation-delay: 4s;
+    }
+    
+    .floating-card[data-industry="banking"] {
+        top: 75%;
+        left: 50%;
+        animation-delay: 5s;
+    }
+    
+    .floating-card[data-industry="ecommerce"] {
+        top: 85%;
+        left: 25%;
+        animation-delay: 6s;
+    }
+    
+    .floating-card[data-industry="education"] {
+        top: 85%;
+        left: 75%;
+        animation-delay: 7s;
+    }
+    
+    /* Enhanced mobile floating animation */
+    @keyframes float-mobile {
+        0%, 100% {
+            transform: translate(-50%, -50%) translateY(0) scale(1);
+        }
+        25% {
+            transform: translate(-50%, -50%) translateY(-8px) scale(1.02);
+        }
+        50% {
+            transform: translate(-50%, -50%) translateY(3px) scale(0.98);
+        }
+        75% {
+            transform: translate(-50%, -50%) translateY(-5px) scale(1.01);
+        }
+    }
+    
+    /* Always show orbital icons on mobile */
+    .floating-card .orbital-icon {
+        opacity: 1 !important;
+        pointer-events: all !important;
+        transition: none !important;
+    }
+    
+    /* Mobile orbital icon adjustments */
+    .orbital-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    .orbital-icon.north { top: -16px; }
+    .orbital-icon.east { right: -16px; }
+    .orbital-icon.south { bottom: -16px; }
+    .orbital-icon.west { left: -16px; }
+    
+    /* Mobile tooltips - show on tap instead of hover */
+    .orbital-tooltip {
+        display: none;
+        position: fixed;
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(10, 11, 15, 0.98);
+        border: 2px solid var(--accent-1);
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 14px;
+        z-index: 10000;
+        max-width: 280px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    
+    .orbital-tooltip.show-mobile {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Remove directional tooltip positioning on mobile */
+    .orbital-icon.east .orbital-tooltip,
+    .orbital-icon.west .orbital-tooltip,
+    .orbital-icon.north .orbital-tooltip,
+    .orbital-icon.south .orbital-tooltip {
+        bottom: auto;
+        left: 50%;
+        right: auto;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+    
+    /* Card core adjustments for mobile */
+    .floating-card .card-core {
+        padding: 20px;
+    }
+    
+    .industry-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .industry-title {
+        font-size: 13px;
+    }
+    
+    /* Mobile-specific info button highlight */
+    .orbital-icon.info-btn {
+        background: rgba(33, 150, 243, 0.25);
+        border: 2px solid rgba(33, 150, 243, 0.5);
+        animation: mobilePulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes mobilePulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 10px rgba(33, 150, 243, 0.4);
+        }
+        50% {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(33, 150, 243, 0.6);
+        }
+    }
+    
+    /* Adjust positioning for specific orbital icons */
+    .orbital-icon.north:not(.info-btn) { 
+        animation: floatOrbit 3s ease-in-out infinite; 
+        animation-delay: 0s;
+    }
+    .orbital-icon.east:not(.info-btn) { 
+        animation: floatOrbit 3s ease-in-out infinite; 
+        animation-delay: 0.5s;
+    }
+    .orbital-icon.west:not(.info-btn) { 
+        animation: floatOrbit 3s ease-in-out infinite; 
+        animation-delay: 1s;
+    }
+    
+    @keyframes floatOrbit {
+        0%, 100% {
+            filter: brightness(1);
+        }
+        50% {
+            filter: brightness(1.3);
+        }
+    }
+    
+    /* Ensure section header stays visible */
+    .enterprise-transform .section-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        backdrop-filter: blur(15px);
+        padding: 15px 20px;
+    }
+    
+    /* Add padding to account for fixed header */
+    .floating-pool-container {
+        padding-top: 100px;
     }
     
     @keyframes float-mobile {
@@ -4383,6 +4797,59 @@ body {
     }
 }
 
+/* Tablet adjustments */
+@media (max-width: 992px) and (min-width: 769px) {
+    .floating-card {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Always show orbital icons on tablets too */
+    .floating-card .orbital-icon {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .floating-card {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .orbital-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .orbital-icon.north { top: -14px; }
+    .orbital-icon.east { right: -14px; }
+    .orbital-icon.south { bottom: -14px; }
+    .orbital-icon.west { left: -14px; }
+    
+    .industry-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+    
+    .industry-title {
+        font-size: 12px;
+    }
+    
+    /* Adjust card positions for small screens */
+    .floating-card[data-industry="logistics"],
+    .floating-card[data-industry="healthcare"] {
+        top: 12%;
+    }
+    
+    .floating-card[data-industry="ecommerce"],
+    .floating-card[data-industry="education"] {
+        top: 88%;
+    }
+}
 @media (max-width: 480px) {
     .floating-card {
         width: 130px;

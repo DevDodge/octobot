@@ -2065,7 +2065,78 @@ const featureContent = {
             icon: "fas fa-headset",
             content: industryContent.service
         }
-    }
+    },
+     // E-commerce Plans
+    ecommerce: {
+        personalization: {
+            title: { en: "Smart Personalization", ar: "تخصيص ذكي" },
+            icon: "fas fa-user-check",
+            content: {
+                en: "🎯 AI learns each customer's preferences and shopping behavior. Personalized product recommendations increase sales by 35%. Dynamic homepage content for each visitor. Smart cross-selling and upselling at the right moments.",
+                ar: "🎯 الذكاء الاصطناعي يتعلم تفضيلات وسلوك التسوق لكل عميل. التوصيات الشخصية للمنتجات تزيد المبيعات 35%. محتوى الصفحة الرئيسية ديناميكي لكل زائر. البيع العابر والإضافي الذكي في اللحظات المناسبة."
+            }
+        },
+        inventory: {
+            title: { en: "Inventory Sync", ar: "مزامنة المخزون" },
+            icon: "fas fa-boxes",
+            content: {
+                en: "📦 Real-time inventory synchronization across all channels. Prevent overselling with automatic stock updates. Low stock alerts and automated reordering. Multi-warehouse management with intelligent routing.",
+                ar: "📦 مزامنة المخزون الفورية عبر جميع القنوات. منع البيع الزائد مع تحديثات المخزون التلقائية. تنبيهات المخزون المنخفض وإعادة الطلب الآلية. إدارة مستودعات متعددة مع التوجيه الذكي."
+            }
+        },
+        analytics: {
+            title: { en: "Sales Analytics", ar: "تحليلات المبيعات" },
+            icon: "fas fa-chart-pie",
+            content: {
+                en: "📊 Comprehensive sales analytics and customer insights. Track conversion rates, cart abandonment, and customer lifetime value. AI-powered predictions for demand forecasting. Automated reports with actionable recommendations.",
+                ar: "📊 تحليلات مبيعات شاملة ورؤى العملاء. تتبع معدلات التحويل، التخلي عن السلة، وقيمة العميل مدى الحياة. توقعات مدعومة بالذكاء الاصطناعي لتوقع الطلب. تقارير آلية مع توصيات قابلة للتنفيذ."
+            }
+        },
+        full: {
+            title: { en: "Complete E-commerce Transformation", ar: "تحول التجارة الإلكترونية الكامل" },
+            icon: "fas fa-shopping-cart",
+            content: {
+                en: "🛒 Transform your online store into an AI-powered selling machine! Smart product recommendations boost sales by 35%. Abandoned cart recovery through intelligent reminders. Size recommendations reduce returns by 40%. Virtual shopping assistant guides customers 24/7. Dynamic pricing optimization based on demand. One-click reordering for repeat customers. Your e-commerce platform becomes a revenue-generating powerhouse! 💰",
+                ar: "🛒 حول متجرك الإلكتروني إلى آلة بيع مدعومة بالذكاء الاصطناعي! التوصيات الذكية للمنتجات تزيد المبيعات 35%. استرداد السلة المهجورة عبر التذكيرات الذكية. توصيات المقاسات تقلل المرتجعات 40%. مساعد تسوق افتراضي يرشد العملاء 24/7. تحسين الأسعار الديناميكي حسب الطلب. إعادة الطلب بنقرة واحدة للعملاء المتكررين. منصتك الإلكترونية تصبح قوة توليد إيرادات! 💰"
+            }
+        }
+    },
+    
+    // Education Plans
+    education: {
+        learning: {
+            title: { en: "Adaptive Learning", ar: "التعلم التكيفي" },
+            icon: "fas fa-book-reader",
+            content: {
+                en: "📚 AI adapts to each student's learning pace and style. Personalized study plans based on strengths and weaknesses. Interactive Q&A sessions available 24/7. Progress tracking with detailed analytics for parents and teachers.",
+                ar: "📚 الذكاء الاصطناعي يتكيف مع وتيرة وأسلوب تعلم كل طالب. خطط دراسية مخصصة بناءً على نقاط القوة والضعف. جلسات أسئلة وأجوبة تفاعلية متاحة 24/7. تتبع التقدم مع تحليلات مفصلة للآباء والمعلمين."
+            }
+        },
+        assessment: {
+            title: { en: "Smart Assessment", ar: "تقييم ذكي" },
+            icon: "fas fa-tasks",
+            content: {
+                en: "✅ Automated grading and instant feedback on assignments. AI-generated practice questions based on curriculum. Performance prediction and early intervention alerts. Plagiarism detection and originality checking.",
+                ar: "✅ تصحيح آلي وتغذية راجعة فورية على الواجبات. أسئلة تدريبية مولدة بالذكاء الاصطناعي حسب المنهج. توقع الأداء وتنبيهات التدخل المبكر. كشف الانتحال وفحص الأصالة."
+            }
+        },
+        tutoring: {
+            title: { en: "AI Tutoring", ar: "التدريس الذكي" },
+            icon: "fas fa-chalkboard-teacher",
+            content: {
+                en: "👨‍🏫 24/7 AI tutor available for all subjects. Explains concepts in multiple ways until understood. Homework help with step-by-step guidance. Exam preparation with personalized study schedules.",
+                ar: "👨‍🏫 مدرس ذكاء اصطناعي متاح 24/7 لجميع المواد. يشرح المفاهيم بطرق متعددة حتى الفهم. مساعدة في الواجبات مع إرشاد خطوة بخطوة. التحضير للامتحانات مع جداول دراسة شخصية."
+            }
+        },
+        full: {
+            title: { en: "Complete Education Revolution", ar: "ثورة التعليم الكاملة" },
+            icon: "fas fa-graduation-cap",
+            content: {
+                en: "🎓 Revolutionize education with AI that understands every student! Adaptive learning adjusts to individual pace and style. 24/7 tutoring in all subjects with infinite patience. Automated homework help that teaches, not just answers. Parent portals with real-time progress updates. Gamification keeps students engaged and motivated. Early warning system for struggling students. Your educational institution becomes a beacon of modern learning! 📖",
+                ar: "🎓 ثورة في التعليم مع ذكاء اصطناعي يفهم كل طالب! التعلم التكيفي يتناسب مع الوتيرة والأسلوب الفردي. دروس خصوصية 24/7 في جميع المواد بصبر لا محدود. مساعدة آلية في الواجبات تعلّم وليس فقط تجيب. بوابات الآباء مع تحديثات التقدم الفورية. اللعبة تبقي الطلاب منخرطين ومتحمسين. نظام إنذار مبكر للطلاب المتعثرين. مؤسستك التعليمية تصبح منارة للتعلم الحديث! 📖"
+            }
+        }
+    },
 };
 
 
@@ -2518,6 +2589,78 @@ function initEnhancedEnterpriseFloating() {
         modalObserver.observe(industryModal, { attributes: true });
     }
 }
+
+
+// Mobile tooltip handling for Enterprise section
+function initMobileTooltips() {
+    if (window.innerWidth > 768) return; // Only for mobile
+    
+    const orbitalIcons = document.querySelectorAll('.orbital-icon:not(.info-btn)');
+    let activeTooltip = null;
+    
+    orbitalIcons.forEach(icon => {
+        icon.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            const tooltip = this.querySelector('.orbital-tooltip');
+            if (!tooltip) return;
+            
+            // Close any open tooltip
+            if (activeTooltip && activeTooltip !== tooltip) {
+                activeTooltip.classList.remove('show-mobile');
+            }
+            
+            // Toggle current tooltip
+            tooltip.classList.toggle('show-mobile');
+            activeTooltip = tooltip.classList.contains('show-mobile') ? tooltip : null;
+            
+            // Auto-hide after 3 seconds
+            if (activeTooltip) {
+                setTimeout(() => {
+                    tooltip.classList.remove('show-mobile');
+                    if (activeTooltip === tooltip) activeTooltip = null;
+                }, 3000);
+            }
+        });
+    });
+    
+    // Close tooltip when clicking elsewhere
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.orbital-icon') && activeTooltip) {
+            activeTooltip.classList.remove('show-mobile');
+            activeTooltip = null;
+        }
+    });
+}
+
+// Initialize mobile tooltips
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileTooltips();
+    
+    // Reinitialize on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initMobileTooltips, 250);
+    });
+});
+
+// Update the floating pool parallax to handle mobile differently
+function updateFloatingPoolParallax() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Simplified mobile handling - no parallax, just floating
+        const floatingCards = document.querySelectorAll('.floating-card');
+        floatingCards.forEach(card => {
+            card.style.transform = ''; // Let CSS animations handle it
+        });
+    }
+}
+
+// Add to existing resize handler
+window.addEventListener('resize', updateFloatingPoolParallax);
+document.addEventListener('DOMContentLoaded', updateFloatingPoolParallax);
 
 // ============================================
 // END OF ENTERPRISE TRANSFORM
