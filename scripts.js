@@ -218,7 +218,7 @@ if (header) {
  * Counts up from 0 to target value
  */
 let conversionRate = 0;
-const conversionTarget = 37;
+const conversionTarget = 95;
 const conversionEl = document.getElementById('conversionRate');
 if (conversionEl) {
     const animateConversion = () => {
@@ -917,13 +917,12 @@ if (menuToggle) {
  */
 const chatDemo = document.querySelector('.chat-demo');
 if (chatDemo) {
-    const demoMessages = [
+       const demoMessages = [
         { type: 'user', text: { en: 'What are your working hours?', ar: 'ما هي ساعات العمل؟' } },
         { type: 'bot', text: { en: "I'm available 24/7! How can I help you today?", ar: 'أنا متاح 24/7! كيف يمكنني مساعدتك اليوم؟' } },
-        { type: 'user', text: { en: 'Can I track my order?', ar: 'هل يمكنني تتبع طلبي؟' } },
-        { type: 'bot', text: { en: 'Of course! Please provide your order number.', ar: 'بالطبع! يرجى تقديم رقم الطلب.' } }
+        { type: 'user', text: { en: 'So, does Octobot just reply to customers using AI?', ar: 'يعني أكتبوت بيرد علي العملاء بالذكاء الاصطناعي بس ؟' } },
+        { type: 'bot', text: { en: 'Definitely not! Octobot can actually run your whole organization.', ar: 'لا طبعا اكتبوت يقدر انه يدير منظمة كاملة يا فندم.' } }
     ];
-
     let messageIndex = 2; // Start after initial messages
 
     /**
