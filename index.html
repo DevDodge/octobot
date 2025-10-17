@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="OctoBot - AI-powered customer service that never sleeps. Transform your business with 24/7 intelligent support." />
+    <title>OctoBot - Your Smart Employee That Never Sleeps</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Cairo:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <img src="https://octobot.sirv.com/robot1.png" alt="OctoBot Logo" class="logo-img" />
+                    <span class="logo-text gradient-text en">OctoBot</span>
+                    <span class="logo-text gradient-text ar">أكــتــبــوت</span>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#features" class="nav-link en">Features</a><a href="#features"
+                                class="nav-link ar">المميزات</a></li>
+                        <li><a href="#about" class="nav-link en">About</a><a href="#about" class="nav-link ar">من
+                                نحن</a></li>
+                        <li><a href="#portfolio" class="nav-link en">Portfolio</a><a href="#portfolio"
+                                class="nav-link ar">أعمالنا</a></li>
+                        <li><a href="#pricing" class="nav-link en">Pricing</a><a href="#pricing"
+                                class="nav-link ar">الأسعار</a></li>
+                        <li><a href="#contact" class="nav-link en">Contact</a><a href="#contact"
+                                class="nav-link ar">اتصل بنا</a></li>
+                    </ul>
+
+                    <button class="language-toggle" id="langToggle">
+                        <span class="en">العربية</span>
+                        <span class="ar">English</span>
+                    </button>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun" id="themeIcon"></i>
+                    </button>
+
+                    <button class="menu-toggle" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="gradient-text en">Your Smart Employee That Never Sleeps</h1>
+                    <h1 class="gradient-text ar">موظفك الذكي الذي لا ينام</h1>
+
+                    <p class="hero-subtitle en">The Perfect Virtual Employee for Your Business - Never Absent, Never
+                        Late, Never Wrong</p>
+                    <p class="hero-subtitle ar">الموظف المثالي الافتراضي لأي بيزنس... مابيغيبش، مابيتأخرش، ومابيغلطش</p>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-primary">
+                            <span class="en">Try Free</span>
+                            <span class="ar">جرب مجانًا</span>
+                            <i class="fas fa-arrow-right en"></i>
+                            <i class="fas fa-arrow-left ar"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span class="en">Watch Demo</span>
+                            <span class="ar">شاهد العرض</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="glass chat-demo">
+                        <div class="chat-message">
+                            <div class="chat-avatar">👤</div>
+                            <div class="chat-bubble">
+                                <span class="en">Do you have this in blue?</span>
+                                <span class="ar">هل يتوفر باللون الأزرق؟</span>
+                            </div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="chat-avatar bot-avatar">
+                                <img src="https://octobot.sirv.com/robot1.png" alt="OctoBot" class="avatar-img" />
+                            </div>
+                            <div class="chat-bubble bot">
+                                <span class="en">Yes! Blue is available. Would you like me to add it to your
+                                    cart?</span>
+                                <span class="ar">نعم! اللون الأزرق متوفر. هل تريد إضافته للسلة؟</span>
+                            </div>
+                        </div>
+
+                        <div class="stats-preview">
+                            <div class="surface stat-card">
+                                <span class="stat-value gradient-text loading" id="conversionRate">0%</span>
+                                <span class="stat-label en">Conversion</span>
+                                <span class="stat-label ar">التحويل</span>
+                            </div>
+                            <div class="surface stat-card">
+                                <span class="stat-value gradient-text">24/7</span>
+                                <span class="stat-label en">Available</span>
+                                <span class="stat-label ar">متاح</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Enterprise Transformation Section - True Floating Pool Design -->
+    <section id="enterprise" class="enterprise-transform">
+
+
+        <div class="floating-pool-container">
+            <!-- Ambient elements -->
+            <div class="ambient-bubble bubble-1"></div>
+            <div class="ambient-bubble bubble-2"></div>
+            <div class="ambient-bubble bubble-3"></div>
+            <div class="ambient-glow glow-1"></div>
+            <div class="ambient-glow glow-2"></div>
+
+            <!-- Floating cards - free-positioned -->
+            <div class="floating-cards-pool">
+                <!-- Logistics & Shipping -->
+                <div class="floating-card" data-industry="logistics"
+                    style="--pos-x: 15%; --pos-y: 25%; --z-index: 3; --float-speed: 7.5s;">
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Logistics & Shipping</span>
+                            <span class="ar">الخدمات اللوجستية</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <div class="orbital-icon north" data-feature="tracking" data-industry="logistics">
+                            <i class="fas fa-satellite-dish"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Real-time Tracking</span>
+                                <span class="ar">تتبع فوري</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="delivery" data-industry="logistics">
+                            <i class="fas fa-clock"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Delivery</span>
+                                <span class="ar">توصيل ذكي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="returns" data-industry="logistics">
+                            <i class="fas fa-undo"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Returns Management</span>
+                                <span class="ar">إدارة المرتجعات</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="logistics">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="floating-card" data-industry="healthcare"
+                    style="--pos-x: 65%; --pos-y: 20%; --z-index: 2; --float-speed: 8.5s;">
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Healthcare Services</span>
+                            <span class="ar">الخدمات الصحية</span>
+                        </h3>
+                    </div>
+                    <!-- Orbital icons remain the same -->
+                    <div class="orbital-icons">
+                        <!-- Same orbital icons as in your original code -->
+                        <div class="orbital-icon north" data-feature="appointments" data-industry="healthcare">
+                            <i class="fas fa-calendar-check"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Appointments</span>
+                                <span class="ar">مواعيد ذكية</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="reminders" data-industry="healthcare">
+                            <i class="fas fa-pills"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Medication Reminders</span>
+                                <span class="ar">تذكير الأدوية</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="emergency" data-industry="healthcare">
+                            <i class="fas fa-ambulance"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Emergency Protocols</span>
+                                <span class="ar">بروتوكولات الطوارئ</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="healthcare">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Service - positioned in center-right -->
+                <div class="floating-card" data-industry="service"
+                    style="--pos-x: 45%; --pos-y: 35%; --z-index: 5; --float-speed: 6.5s;">
+                    <!-- Content remains the same -->
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Customer Service</span>
+                            <span class="ar">خدمة العملاء</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <!-- Same orbital icons -->
+                        <div class="orbital-icon north" data-feature="ai-response" data-industry="service">
+                            <i class="fas fa-robot"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">AI Response System</span>
+                                <span class="ar">نظام الرد الذكي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="multilingual" data-industry="service">
+                            <i class="fas fa-language"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Multi-language Support</span>
+                                <span class="ar">دعم متعدد اللغات</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="analytics" data-industry="service">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Performance Analytics</span>
+                                <span class="ar">تحليلات الأداء</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="service">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Management - positioned bottom-right -->
+                <div class="floating-card" data-industry="inventory"
+                    style="--pos-x: 75%; --pos-y: 60%; --z-index: 3; --float-speed: 8s;">
+                    <!-- Content remains the same -->
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Inventory Management</span>
+                            <span class="ar">إدارة المخزون</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <!-- Same orbital icons -->
+                        <div class="orbital-icon north" data-feature="monitoring" data-industry="inventory">
+                            <i class="fas fa-eye"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">24/7 Monitoring</span>
+                                <span class="ar">مراقبة على مدار الساعة</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="predictions" data-industry="inventory">
+                            <i class="fas fa-brain"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Predictions</span>
+                                <span class="ar">توقعات ذكية</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="optimization" data-industry="inventory">
+                            <i class="fas fa-chart-bar"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Space Optimization</span>
+                                <span class="ar">تحسين المساحة</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="inventory">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotels & Hospitality - positioned bottom-left -->
+                <div class="floating-card" data-industry="hospitality"
+                    style="--pos-x: 25%; --pos-y: 65%; --z-index: 4; --float-speed: 7s;">
+                    <!-- Content remains the same -->
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Hotels & Hospitality</span>
+                            <span class="ar">الفنادق والضيافة</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <!-- Same orbital icons -->
+                        <div class="orbital-icon north" data-feature="booking" data-industry="hospitality">
+                            <i class="fas fa-bed"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Booking</span>
+                                <span class="ar">حجز ذكي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="checkin" data-industry="hospitality">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Mobile Check-in</span>
+                                <span class="ar">تسجيل دخول بالجوال</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="concierge" data-industry="hospitality">
+                            <i class="fas fa-concierge-bell"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">AI Concierge</span>
+                                <span class="ar">خدمة الكونسيرج الذكية</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="hospitality">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banking & Finance - positioned center-left -->
+                <div class="floating-card" data-industry="banking"
+                    style="--pos-x: 35%; --pos-y: 50%; -- --float-speed: 9s;">
+                    <!-- Content remains the same -->
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Banking & Finance</span>
+                            <span class="ar">البنوك والمالية</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <!-- Same orbital icons -->
+                        <div class="orbital-icon north" data-feature="security" data-industry="banking">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Fraud Protection</span>
+                                <span class="ar">حماية من الاحتيال</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="transactions" data-industry="banking">
+                            <i class="fas fa-exchange-alt"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Transactions</span>
+                                <span class="ar">معاملات ذكية</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="verification" data-industry="banking">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Instant Verification</span>
+                                <span class="ar">تحقق فوري</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="banking">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added card: E-commerce -->
+                <div class="floating-card" data-industry="ecommerce"
+                    style="--pos-x: 55%; --pos-y: 70%; --z-index: 2; --float-speed: 8.3s;">
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">E-commerce</span>
+                            <span class="ar">التجارة الإلكترونية</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <div class="orbital-icon north" data-feature="personalization" data-industry="ecommerce">
+                            <i class="fas fa-user-check"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Personalization</span>
+                                <span class="ar">تخصيص ذكي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="inventory" data-industry="ecommerce">
+                            <i class="fas fa-boxes"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Inventory Sync</span>
+                                <span class="ar">مزامنة المخزون</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="analytics" data-industry="ecommerce">
+                            <i class="fas fa-chart-pie"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Sales Analytics</span>
+                                <span class="ar">تحليلات المبيعات</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="ecommerce">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added card: Education -->
+                <div class="floating-card" data-industry="education"
+                    style="--pos-x: 85%; --pos-y: 38%; --z-index: 3; --float-speed: 7.8s;">
+                    <div class="card-core">
+                        <div class="industry-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="industry-title">
+                            <span class="en">Education</span>
+                            <span class="ar">التعليم</span>
+                        </h3>
+                    </div>
+                    <div class="orbital-icons">
+                        <div class="orbital-icon north" data-feature="learning" data-industry="education">
+                            <i class="fas fa-book-reader"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Adaptive Learning</span>
+                                <span class="ar">التعلم التكيفي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon east" data-feature="assessment" data-industry="education">
+                            <i class="fas fa-tasks"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">Smart Assessment</span>
+                                <span class="ar">تقييم ذكي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon west" data-feature="tutoring" data-industry="education">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">AI Tutoring</span>
+                                <span class="ar">التدريس الذكي</span>
+                            </div>
+                        </div>
+                        <div class="orbital-icon south info-btn" data-feature="full" data-industry="education">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="orbital-tooltip">
+                                <span class="en">View Full Details</span>
+                                <span class="ar">عرض التفاصيل الكاملة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keep the existing Industry Modal -->
+        <div class="industry-modal" id="industryModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content glass">
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-icon" id="modalIndustryIcon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="modal-title gradient-text" id="modalIndustryTitle">
+                        <span class="en">Industry Transformation</span>
+                        <span class="ar">تحول الصناعة</span>
+                    </h3>
+                </div>
+                <div class="modal-body" id="modalIndustryBody">
+                    <!-- Content will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text en">Powerful AI Current Features</h2>
+                <h2 class="section-title gradient-text ar">مميزات الذكاء الاصطناعي الحالية</h2>
+                <p class="section-subtitle en">Everything you need to automate customer service and boost sales</p>
+                <p class="section-subtitle ar">كل ما تحتاجه لأتمتة خدمة العملاء وزيادة المبيعات</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="surface feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title en">24/7 Smart Response</h3>
+                    <h3 class="feature-title ar">رد ذكي 24/7</h3>
+                    <p class="feature-desc en">Instant responses to customer inquiries around the clock</p>
+                    <p class="feature-desc ar">ردود فورية على استفسارات العملاء على مدار الساعة</p>
+                </div>
+
+                <div class="surface feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title en">Multi-Platform Support</h3>
+                    <h3 class="feature-title ar">دعم متعدد المنصات</h3>
+                    <p class="feature-desc en">Facebook, Instagram, WhatsApp, and more</p>
+                    <p class="feature-desc ar">فيسبوك، انستغرام، واتساب، وغيرها</p>
+                </div>
+
+                <div class="surface feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title en">Sales Conversion</h3>
+                    <h3 class="feature-title ar">تحويل المبيعات</h3>
+                    <p class="feature-desc en">Transform conversations into sales opportunities</p>
+                    <p class="feature-desc ar">تحويل المحادثات إلى فرص بيع</p>
+                </div>
+
+                <div class="surface feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="feature-title en">Data Organization</h3>
+                    <h3 class="feature-title ar">تنظيم البيانات</h3>
+                    <p class="feature-desc en">Automatically categorize and store customer data</p>
+                    <p class="feature-desc ar">تصنيف وتخزين بيانات العملاء تلقائيًا</p>
+                </div>
+
+                <div class="surface feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="feature-title en">Multi-Language</h3>
+                    <h3 class="feature-title ar">متعدد اللغات</h3>
+                    <p class="feature-desc en">Arabic & English with cultural adaptation</p>
+                    <p class="feature-desc ar">العربية والإنجليزية مع التكيف الثقافي</p>
+                </div>
+
+                <div class="surface feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="feature-title en">Full Control</h3>
+                    <h3 class="feature-title ar">تحكم كامل</h3>
+                    <p class="feature-desc en">Visual flows and guardrails for your brand</p>
+                    <p class="feature-desc ar">تدفقات بصرية وضوابط لعلامتك التجارية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text en">Our Story</h2>
+                <h2 class="section-title gradient-text ar">قصتنا</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="glass" style="padding: 40px;">
+                    <p class="about-text en">
+                        We're revolutionizing customer service with AI that understands, learns, and delivers
+                        exceptional experiences 24/7. OctoBot is purpose-built for commerce and education brands,
+                        offering seamless integration across all major platforms.
+                    </p>
+                    <p class="about-text ar">
+                        نحن نحدث ثورة في خدمة العملاء باستخدام الذكاء الاصطناعي الذي يفهم ويتعلم ويقدم تجارب استثنائية
+                        على مدار الساعة. تم تصميم أكــتــبــوت خصيصًا لعلامات التجارة والتعليم.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="glass stat-item">
+                        <span class="stat-number gradient-text" data-count="95">0</span>
+                        <span class="stat-label en">Customer Satisfaction</span>
+                        <span class="stat-label ar">رضا العملاء</span>
+                    </div>
+                    <div class="glass stat-item">
+                        <span class="stat-number gradient-text" data-count="500">0</span>
+                        <span class="stat-label en">Happy Clients</span>
+                        <span class="stat-label ar">عملاء سعداء</span>
+                    </div>
+                    <div class="glass stat-item">
+                        <span class="stat-number gradient-text">24/7</span>
+                        <span class="stat-label en">Service Uptime</span>
+                        <span class="stat-label ar">وقت الخدمة</span>
+                    </div>
+                    <div class="glass stat-item">
+                        <span class="stat-number gradient-text">
+                            < 2s</span>
+                                <span class="stat-label en">Response Time</span>
+                                <span class="stat-label ar">وقت الاستجابة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text en">Success Stories</h2>
+                <h2 class="section-title gradient-text ar">قصص النجاح</h2>
+            </div>
+
+            <div class="portfolio-wrapper">
+                <div class="portfolio-track" id="portfolioTrack">
+                    <!-- Card 1 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/E91E63/ffffff?text=LW" alt="LegendsWear"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">LegendsWear</h3>
+                                    <p class="brand-category en">Fashion Retail</p>
+                                    <p class="brand-category ar">أزياء التجزئة</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Transformed online fashion sales with 24/7 AI assistance,
+                                resulting in 45% sales increase</p>
+                            <p class="brand-brief ar">حولنا مبيعات الأزياء عبر الإنترنت بمساعدة AI على مدار الساعة، مما
+                                أدى لزيادة المبيعات 45%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">📈</span>
+                                    <span class="stat-text">
+                                        <span class="en">+45% Sales</span>
+                                        <span class="ar">+45% المبيعات</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">⚡</span>
+                                    <span class="stat-text">
+                                        <span class="en">2s Response</span>
+                                        <span class="ar">2ث الاستجابة</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="legendswear">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://octobot.sirv.com/HiralearningLogo.png" alt="Hira Learning"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Hira Learning</h3>
+                                    <p class="brand-category en">Education</p>
+                                    <p class="brand-category ar">التعليم</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Automated student support leading to 44% increase in course
+                                enrollments</p>
+                            <p class="brand-brief ar">دعم الطلاب الآلي أدى إلى زيادة 44% في التسجيلات</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎓</span>
+                                    <span class="stat-text">
+                                        <span class="en">+44% Enrollments</span>
+                                        <span class="ar">+44% التسجيلات</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">😊</span>
+                                    <span class="stat-text">
+                                        <span class="en">92% Satisfaction</span>
+                                        <span class="ar">92% الرضا</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="hiralearning">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/4527A0/ffffff?text=EG" alt="Egypt Gamers"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Egypt Gamers</h3>
+                                    <p class="brand-category en">E-Commerce</p>
+                                    <p class="brand-category ar">التجارة الإلكترونية</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Gaming store achieved 31% revenue growth with smart product
+                                recommendations</p>
+                            <p class="brand-brief ar">متجر الألعاب حقق نمو 31% في الإيرادات بالتوصيات الذكية</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">💰</span>
+                                    <span class="stat-text">
+                                        <span class="en">+31% Revenue</span>
+                                        <span class="ar">+31% الإيرادات</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎮</span>
+                                    <span class="stat-text">
+                                        <span class="en">24/7 Support</span>
+                                        <span class="ar">دعم 24/7</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="egyptgamers">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/E91E63/ffffff?text=BC" alt="Beauty Corner"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Beauty Corner</h3>
+                                    <p class="brand-category en">Cosmetics</p>
+                                    <p class="brand-category ar">مستحضرات التجميل</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Personalized beauty consultations increased conversion by 67%</p>
+                            <p class="brand-brief ar">الاستشارات الجمالية المخصصة زادت التحويل 67%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">💄</span>
+                                    <span class="stat-text">
+                                        <span class="en">+67% Conversion</span>
+                                        <span class="ar">+67% التحويل</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">✨</span>
+                                    <span class="stat-text">
+                                        <span class="en">5k+ Consultations</span>
+                                        <span class="ar">5k+ استشارة</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="beautycorner">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/B039D3/ffffff?text=TH" alt="Tech Hub"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Tech Hub</h3>
+                                    <p class="brand-category en">Electronics</p>
+                                    <p class="brand-category ar">الإلكترونيات</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Technical support bot reduced response time by 85%</p>
+                            <p class="brand-brief ar">بوت الدعم الفني قلل وقت الاستجابة 85%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">🔧</span>
+                                    <span class="stat-text">
+                                        <span class="en">-85% Response Time</span>
+                                        <span class="ar">-85% وقت الاستجابة</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">💻</span>
+                                    <span class="stat-text">
+                                        <span class="en">10k+ Resolved</span>
+                                        <span class="ar">10k+ حل</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="techhub">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/4527A0/ffffff?text=FC" alt="Fitness Club"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Fitness Club</h3>
+                                    <p class="brand-category en">Health & Fitness</p>
+                                    <p class="brand-category ar">الصحة واللياقة</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">AI trainer bot increased membership retention by 52%</p>
+                            <p class="brand-brief ar">مدرب AI زاد الاحتفاظ بالعضوية 52%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">💪</span>
+                                    <span class="stat-text">
+                                        <span class="en">+52% Retention</span>
+                                        <span class="ar">+52% الاحتفاظ</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🏋️</span>
+                                    <span class="stat-text">
+                                        <span class="en">3k+ Members</span>
+                                        <span class="ar">3k+ عضو</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="fitnessclub">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/E91E63/ffffff?text=GP" alt="Gourmet Palace"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Gourmet Palace</h3>
+                                    <p class="brand-category en">Restaurant</p>
+                                    <p class="brand-category ar">مطعم</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Reservation bot increased table bookings by 73%</p>
+                            <p class="brand-brief ar">بوت الحجز زاد حجوزات الطاولات 73%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">🍽️</span>
+                                    <span class="stat-text">
+                                        <span class="en">+73% Bookings</span>
+                                        <span class="ar">+73% الحجوزات</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">⭐</span>
+                                    <span class="stat-text">
+                                        <span class="en">4.9 Rating</span>
+                                        <span class="ar">4.9 تقييم</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="gourmetpalace">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/B039D3/ffffff?text=PH" alt="Pet Haven"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Pet Haven</h3>
+                                    <p class="brand-category en">Pet Care</p>
+                                    <p class="brand-category ar">رعاية الحيوانات</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Pet care advisor increased product sales by 58%</p>
+                            <p class="brand-brief ar">مستشار رعاية الحيوانات زاد المبيعات 58%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">🐾</span>
+                                    <span class="stat-text">
+                                        <span class="en">+58% Sales</span>
+                                        <span class="ar">+58% المبيعات</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🐶</span>
+                                    <span class="stat-text">
+                                        <span class="en">Happy Pets</span>
+                                        <span class="ar">حيوانات سعيدة</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="pethaven">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/4527A0/ffffff?text=HA" alt="Home Arts"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Home Arts</h3>
+                                    <p class="brand-category en">Home Decor</p>
+                                    <p class="brand-category ar">ديكور المنزل</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Interior design bot improved customer satisfaction 89%</p>
+                            <p class="brand-brief ar">بوت التصميم الداخلي حسن رضا العملاء 89%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">🏠</span>
+                                    <span class="stat-text">
+                                        <span class="en">+89% Satisfaction</span>
+                                        <span class="ar">+89% الرضا</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎨</span>
+                                    <span class="stat-text">
+                                        <span class="en">500+ Designs</span>
+                                        <span class="ar">500+ تصميم</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="homearts">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="portfolio-card-new">
+                        <div class="card-gradient-bg"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <img src="https://via.placeholder.com/60x60/E91E63/ffffff?text=DS" alt="Digital Studio"
+                                    class="brand-logo">
+                                <div class="brand-info">
+                                    <h3 class="brand-name">Digital Studio</h3>
+                                    <p class="brand-category en">Photography</p>
+                                    <p class="brand-category ar">التصوير</p>
+                                </div>
+                            </div>
+                            <p class="brand-brief en">Booking assistant increased studio sessions by 94%</p>
+                            <p class="brand-brief ar">مساعد الحجز زاد جلسات الاستوديو 94%</p>
+                            <div class="social-links-row">
+                                <a href="#" class="social-icon facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon whatsapp" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon website" target="_blank">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                                <a href="#" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">📸</span>
+                                    <span class="stat-text">
+                                        <span class="en">+94% Sessions</span>
+                                        <span class="ar">+94% الجلسات</span>
+                                    </span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🌟</span>
+                                    <span class="stat-text">
+                                        <span class="en">Pro Results</span>
+                                        <span class="ar">نتائج احترافية</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="details-btn" data-client="digitalstudio">
+                                <span class="en">View Case Study</span>
+                                <span class="ar">عرض دراسة الحالة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="portfolio-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                    <span class="dot" data-index="5"></span>
+                    <span class="dot" data-index="6"></span>
+                    <span class="dot" data-index="7"></span>
+                    <span class="dot" data-index="8"></span>
+                    <span class="dot" data-index="9"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Detail Modal -->
+        <div class="portfolio-modal" id="portfolioModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content glass">
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div id="portfolioModalContent">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text en">What Our Clients Say</h2>
+                <h2 class="section-title gradient-text ar">ماذا يقول عملاؤنا</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="glass testimonial-card has-voice">
+                    <div class="voice-badge gradient-text" id="voiceBadge1">
+                        <div class="badge-text">
+                            <i class="fas fa-headphones"></i>
+                            <span class="en">Listen to Real Customer Experience</span>
+                            <span class="ar">استمع لتجربة حقيقية من عميلنا</span>
+                        </div>
+                        <div class="voice-wave">
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                        </div>
+                    </div>
+                    <div class="voice-player">
+                        <button class="play-btn" data-audio="testimonial1">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="audio-progress">
+                            <div class="progress-track">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <span class="audio-time">0:00</span>
+                        </div>
+                        <audio id="testimonial1" src="media/clientsFeedBack/FOLO MP3.m4a"></audio>
+                    </div>
+
+                    <p class="testimonial-text">
+                        <span class="en">OctoBot transformed our customer service completely. Response times are down
+                            80% and satisfaction is through the roof!</span>
+                        <span class="ar">حول أكــتــبــوت خدمة العملاء لدينا تمامًا. انخفض وقت الاستجابة بنسبة 80٪
+                            والرضا في أعلى مستوياته!</span>
+                    </p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-role">CEO, TechStart</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass testimonial-card">
+                    <p class="testimonial-text">
+                        <span class="en">The multi-language support is incredible. Our Arabic customers finally get the
+                            service they deserve.</span>
+                        <span class="ar">دعم اللغات المتعددة مذهل. عملاؤنا العرب يحصلون أخيرًا على الخدمة التي
+                            يستحقونها.</span>
+                    </p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Ahmed Hassan</div>
+                            <div class="author-role">Founder, LegendsWear</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text en">Roadmap</h2>
+                <h2 class="section-title gradient-text ar">خارطة الطريق</h2>
+            </div>
+
+            <div class="timeline-container">
+                <div class="glass timeline-card">
+                    <div class="timeline-header">
+                        <span class="timeline-badge">In Progress</span>
+                        <span class="timeline-progress">85%</span>
+                    </div>
+                    <h3 class="timeline-title en">Advanced NLP Engine</h3>
+                    <h3 class="timeline-title ar">محرك معالجة متقدم</h3>
+                    <p class="timeline-desc en">Understanding context and emotions better than ever</p>
+                    <p class="timeline-desc ar">فهم السياق والعواطف بشكل أفضل</p>
+                    <div class="timeline-progress-bar">
+                        <div class="timeline-progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="glass timeline-card">
+                    <div class="timeline-header">
+                        <span class="timeline-badge">Coming Soon</span>
+                        <span class="timeline-progress">60%</span>
+                    </div>
+                    <h3 class="timeline-title en">Voice Integration</h3>
+                    <h3 class="timeline-title ar">التكامل الصوتي</h3>
+                    <p class="timeline-desc en">Natural voice conversations across all channels</p>
+                    <p class="timeline-desc ar">محادثات صوتية طبيعية عبر جميع القنوات</p>
+                    <div class="timeline-progress-bar">
+                        <div class="timeline-progress-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+
+                <div class="glass timeline-card">
+                    <div class="timeline-header">
+                        <span class="timeline-badge">Planned</span>
+                        <span class="timeline-progress">30%</span>
+                    </div>
+                    <h3 class="timeline-title en">AI Marketplace</h3>
+                    <h3 class="timeline-title ar">سوق الذكاء الاصطناعي</h3>
+                    <p class="timeline-desc en">Pre-built skills for different industries</p>
+                    <p class="timeline-desc ar">مهارات جاهزة لصناعات مختلفة</p>
+                    <div class="timeline-progress-bar">
+                        <div class="timeline-progress-fill" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text en">Choose Your Plan</h2>
+                <h2 class="section-title gradient-text ar">عرض أسعار من أكــتــبــوت</h2>
+                <p class="section-subtitle en">AI-powered solutions for every platform</p>
+                <p class="section-subtitle ar">حلول مدعومة بالذكاء الاصطناعي لكل المنصات</p>
+            </div>
+
+            <!-- Service Type Tabs -->
+            <div class="pricing-tabs-wrapper">
+                <div class="pricing-tabs glass">
+                    <button class="tab-btn active" data-service="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="en">Facebook OctoBot</span>
+                        <span class="ar">أكــتــبــوت فيسبوك</span>
+                    </button>
+                    <button class="tab-btn" data-service="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="en">WhatsApp OctoBot</span>
+                        <span class="ar">أكــتــبــوت واتساب</span>
+                    </button>
+                    <button class="tab-btn" data-service="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="en">Instagram OctoBot</span>
+                        <span class="ar">أكــتــبــوت انستجرام</span>
+                    </button>
+                    <button class="tab-btn" data-service="telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span class="en">Telegram OctoBot</span>
+                        <span class="ar">أكــتــبــوت تيليجرام</span>
+                    </button>
+                    <button class="tab-btn" data-service="website">
+                        <i class="fas fa-globe"></i>
+                        <span class="en">Website OctoBot</span>
+                        <span class="ar">أكــتــبــوت ويب سايت</span>
+                    </button>
+                    <button class="tab-btn" data-service="custom">
+                        <i class="fas fa-cogs"></i>
+                        <span class="en">Custom OctoBot</span>
+                        <span class="ar">أكــتــبــوت مخصص</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Duration Selector -->
+            <div class="duration-selector">
+                <span class="en">Select Duration:</span>
+                <span class="ar">اختر المدة:</span>
+                <div class="duration-pills">
+                    <button class="duration-pill active" data-duration="1month">
+                        <span class="en">1 Month</span>
+                        <span class="ar">شهر واحد</span>
+                    </button>
+                    <button class="duration-pill" data-duration="3months">
+                        <span class="en">3 Months</span>
+                        <span class="ar">3 أشهر</span>
+                    </button>
+                    <button class="duration-pill" data-duration="6months">
+                        <span class="en">6 Months</span>
+                        <span class="ar">6 أشهر</span>
+                        <span class="save-badge">
+                            <span class="en">Save 10%</span>
+                            <span class="ar">خصم 10%</span>
+                        </span>
+                    </button>
+                    <button class="duration-pill" data-duration="1year">
+                        <span class="en">1 Year</span>
+                        <span class="ar">سنة كاملة</span>
+                        <span class="save-badge">
+                            <span class="en">Save 10%</span>
+                            <span class="ar">خصم 10%</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Facebook Plans -->
+            <div class="pricing-content active" id="facebook-plans">
+                <div class="modern-pricing-grid">
+                    <!-- Facebook Sales -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="facebook-sales">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Smart Sales Messenger</span>
+                                <span class="ar">ماسنجر مبيعات ذكي</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Instant response & customer persuasion</span>
+                                <span class="ar">رد فوري وإقناع العملاء</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Full understanding of products/services</span>
+                                <span class="ar">فهم كامل للمنتج أو الخدمة</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Automatic deal closing</span>
+                                <span class="ar">إقفال الصفقات تلقائيًا</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Admin WhatsApp notifications</span>
+                                <span class="ar">إرسال رسائل للإدارة واتساب</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Comment Management -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="facebook-comments">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Comment Replies</span>
+                                <span class="ar">ردود كومنتات</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Smart comment management</span>
+                                <span class="ar">إدارة التعليقات بذكاء</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Auto-reply to comments</span>
+                                <span class="ar">رد تلقائي على التعليقات</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Hide negative comments</span>
+                                <span class="ar">إخفاء التعليقات السلبية</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Full comment control</span>
+                                <span class="ar">التحكم الكامل في التعليقات</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Customer Analysis -->
+                    <div class="modern-price-card glass featured">
+                        <div class="featured-badge gradient-text">
+                            <span class="en">Most Effective</span>
+                            <span class="ar">الأكثر فعالية</span>
+                        </div>
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="facebook-analysis">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Customer Analysis & Retargeting</span>
+                                <span class="ar">تحليل عملاء وإعادة استهداف</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Deep understanding of each customer</span>
+                                <span class="ar">فهم عميق لكل عميل</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Comprehensive customer analysis</span>
+                                <span class="ar">تحليل شامل لجميع العملاء</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Understand customer interests</span>
+                                <span class="ar">معرفة اهتمامات كل عميل</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Personalized follow-up messages</span>
+                                <span class="ar">رسائل متابعة مخصصة</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp Plans -->
+            <div class="pricing-content" id="whatsapp-plans">
+                <div class="modern-pricing-grid">
+                    <!-- WhatsApp Sales -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="whatsapp-sales">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Smart WhatsApp Sales</span>
+                                <span class="ar">واتساب مبيعات ذكي</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Sales agent on WhatsApp</span>
+                                <span class="ar">موظف مبيعات على واتساب</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Full understanding of products/services</span>
+                                <span class="ar">فهم كامل للمنتج أو الخدمة</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Automatic deal closing</span>
+                                <span class="ar">إقفال الصفقات تلقائيًا</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Send messages to admin</span>
+                                <span class="ar">إرسال رسائل للإدارة</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Order Confirmation -->
+                    <div class="modern-price-card glass featured">
+                        <div class="featured-badge gradient-text">
+                            <span class="en">Reduces Returns</span>
+                            <span class="ar">يقلل المرتجعات</span>
+                        </div>
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="whatsapp-confirmation">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Pre-Shipping Order Confirmation</span>
+                                <span class="ar">تأكيد الأوردرات قبل الشحن</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Effectively reduce returns</span>
+                                <span class="ar">تقليل المرتجعات بفعالية</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Contact all customers</span>
+                                <span class="ar">التواصل مع جميع العملاء</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Confirm orders before shipping</span>
+                                <span class="ar">تأكيد الأوردر قبل الشحن</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Real-time status updates</span>
+                                <span class="ar">تحديث الحالة لحظيًا</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Customer Analysis WhatsApp -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="whatsapp-analysis">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Customer Analysis & Retargeting</span>
+                                <span class="ar">تحليل عملاء وإعادة استهداف</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Smart customer targeting</span>
+                                <span class="ar">استهداف ذكي للعملاء</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Complete customer analysis</span>
+                                <span class="ar">تحليل شامل لكل العملاء</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Know customer interests</span>
+                                <span class="ar">معرفة اهتمامات العميل</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Personalized follow-up messages</span>
+                                <span class="ar">رسائل متابعة مخصصة</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Plans -->
+            <div class="pricing-content" id="instagram-plans">
+                <div class="modern-pricing-grid">
+                    <!-- Instagram Sales -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="instagram-sales">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Smart Instagram Sales</span>
+                                <span class="ar">انستجرام مبيعات ذكي</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Instagram sales agent</span>
+                                <span class="ar">موظف مبيعات انستجرام</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Understand products/services</span>
+                                <span class="ar">فهم المنتج أو الخدمة</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Close deals</span>
+                                <span class="ar">إقفال الصفقات</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Send messages to admin</span>
+                                <span class="ar">إرسال رسائل للإدارة</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Instagram Comments -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="instagram-comments">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Comment Replies</span>
+                                <span class="ar">ردود كومنتات</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Comment management</span>
+                                <span class="ar">إدارة التعليقات</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Reply to comments</span>
+                                <span class="ar">رد على التعليقات</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Hide negativity</span>
+                                <span class="ar">إخفاء السلبية</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Full control</span>
+                                <span class="ar">تحكم كامل</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telegram Plans -->
+            <div class="pricing-content" id="telegram-plans">
+                <div class="modern-pricing-grid">
+                    <!-- Telegram Sales -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="telegram-sales">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Smart Telegram Sales</span>
+                                <span class="ar">تيليجرام مبيعات ذكي</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Telegram sales agent</span>
+                                <span class="ar">موظف مبيعات تيليجرام</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Understand products/services</span>
+                                <span class="ar">فهم المنتج أو الخدمة</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Close deals</span>
+                                <span class="ar">إقفال الصفقات</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Send messages to admin</span>
+                                <span class="ar">إرسال رسائل للإدارة</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Telegram Custom -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="telegram-custom">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Custom Telegram Tasks</span>
+                                <span class="ar">مهام تيليجرام مخصصة</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Based on your needs</span>
+                                <span class="ar">حسب احتياجاتك</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="amount-text">
+                                    <span class="en">Starting from</span>
+                                    <span class="ar">يبدأ من</span>
+                                </span>
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Custom tasks</span>
+                                <span class="ar">مهام مخصصة</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Based on needs</span>
+                                <span class="ar">حسب الاحتياج</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Flexible solutions</span>
+                                <span class="ar">حلول مرنة</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <span class="en">Contact Us</span>
+                            <span class="ar">تواصل معنا</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Plans -->
+            <div class="pricing-content" id="website-plans">
+                <div class="modern-pricing-grid single-card">
+                    <div class="modern-price-card glass featured">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="website-bot">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Website Bot</span>
+                                <span class="ar">ويب سايت</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Smart assistant on your website</span>
+                                <span class="ar">مساعد ذكي على موقعك</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">1,500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Online sales or customer service assistant</span>
+                                <span class="ar">مساعد بيع أو خدمة عملاء أونلاين</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Keep visitors engaged on site</span>
+                                <span class="ar">الحفاظ على الزائرين داخل الموقع</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Send appropriate product links to customers</span>
+                                <span class="ar">إرسال روابط المنتج المناسب للعميل</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Facilitate browsing and product access</span>
+                                <span class="ar">تسهيل التصفح والوصول للمنتجات</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Plans -->
+            <div class="pricing-content" id="custom-plans">
+                <div class="modern-pricing-grid">
+                    <!-- Ad Detection -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="ad-detection">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Ad Detection</span>
+                                <span class="ar">استشعار الإعلانات</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Auto-reply to ads</span>
+                                <span class="ar">رد تلقائي على الإعلانات</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Detect ads</span>
+                                <span class="ar">استشعار الإعلانات</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Reply to specific products</span>
+                                <span class="ar">رد على المنتج الخاص</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Instant interaction</span>
+                                <span class="ar">تفاعل فوري</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+
+                    <!-- Voice & Image Analysis -->
+                    <div class="modern-price-card glass">
+                        <div class="card-glow"></div>
+                        <button class="info-btn" data-plan="voice-image-analysis">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="info-bubble">
+                                <span class="en">Check me!</span>
+                                <span class="ar">اضغط هنا!</span>
+                            </span>
+                        </button>
+                        <div class="plan-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="plan-header">
+                            <h3 class="plan-title gradient-text">
+                                <span class="en">Voice & Image Analysis</span>
+                                <span class="ar">تحليل صوتي وصور</span>
+                            </h3>
+                            <div class="plan-subtitle">
+                                <span class="en">Advanced content understanding</span>
+                                <span class="ar">فهم متقدم للمحتوى</span>
+                            </div>
+                        </div>
+                        <div class="price-display">
+                            <div class="price-amount">
+                                <span class="currency">EGP</span>
+                                <span class="amount">500</span>
+                                <span class="period en">/month</span>
+                                <span class="period ar">/شهر</span>
+                            </div>
+                        </div>
+                        <ul class="modern-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Listen to voice messages</span>
+                                <span class="ar">سماع الفويسات</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">Analyze images</span>
+                                <span class="ar">تحليل الصور</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span class="en">For all platforms</span>
+                                <span class="ar">لكل المنصات</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary" style="width: 100%;">
+                            <span class="en">Get Started</span>
+                            <span class="ar">ابدأ الآن</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bundle Offers -->
+            <div class="bundle-section">
+                <h3 class="bundle-title gradient-text">
+                    <i class="fas fa-gift"></i>
+                    <span class="en">Bundle Offers</span>
+                    <span class="ar">عروض مجمعة</span>
+                </h3>
+                <div class="bundle-grid">
+                    <div class="bundle-card glass">
+                        <div class="bundle-header">
+                            <h4>
+                                <span class="en">Complete Facebook Bundle</span>
+                                <span class="ar">حزمة فيسبوك الكاملة</span>
+                            </h4>
+                            <div class="bundle-price">
+                                <span class="old-price">3,500</span>
+                                <span class="new-price">
+                                    <span class="en">2,999 EGP/month</span>
+                                    <span class="ar">2,999 ج.م/شهر</span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="bundle-desc">
+                            <span class="en">Messenger Sales + Comment Replies + Customer Analysis</span>
+                            <span class="ar">ماسنجر مبيعات + ردود كومنتات + تحليل عملاء</span>
+                        </p>
+                        <button class="btn btn-primary">
+                            <span class="en">Get Offer</span>
+                            <span class="ar">احصل على العرض</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Plan Details Modal -->
+        <div class="plan-modal" id="planModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content glass">
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-icon" id="modalIcon">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </div>
+                    <h3 class="modal-title gradient-text" id="modalTitle">
+                        <span class="en">Plan Details</span>
+                        <span class="ar">تفاصيل الخطة</span>
+                    </h3>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be dynamically inserted -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" style="width: 100%;">
+                        <span class="en">Get Started with This Plan</span>
+                        <span class="ar">ابدأ مع هذه الخطة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <h2 class="cta-title gradient-text en">Ready to Transform Your Business?</h2>
+            <h2 class="cta-title gradient-text ar">مستعد لتحويل عملك؟</h2>
+
+            <p class="section-subtitle en">Join thousands of businesses using OctoBot</p>
+            <p class="section-subtitle ar">انضم إلى آلاف الشركات التي تستخدم أكــتــبــوت</p>
+
+            <button class="btn btn-primary" style="font-size: 18px; padding: 16px 40px; margin-top: 32px;">
+                <span class="en">Start Free Trial</span>
+                <span class="ar">ابدأ الإصدار التجريبي</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                    <img src="https://octobot.sirv.com/robot1.png" alt="OctoBot Logo" class="logo-img" />
+                        <span class="logo-text gradient-text en">OctoBot</span>
+                        <span class="logo-text gradient-text ar">أكــتــبــوت</span>
+                    </div>
+                    <p class="en" style="color: var(--text-muted);">AI-powered customer service that never sleeps</p>
+                    <p class="ar" style="color: var(--text-muted);">خدمة عملاء مدعومة بالذكاء الاصطناعي</p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="en">Product</h4>
+                    <h4 class="ar">المنتج</h4>
+                    <ul>
+                        <li><a href="#features" class="en">Features</a><a href="#features" class="ar">المميزات</a></li>
+                        <li><a href="#pricing" class="en">Pricing</a><a href="#pricing" class="ar">الأسعار</a></li>
+                        <li><a href="#" class="en">FAQ</a><a href="#" class="ar">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="en">Company</h4>
+                    <h4 class="ar">الشركة</h4>
+                    <ul>
+                        <li><a href="#about" class="en">About</a><a href="#about" class="ar">حول</a></li>
+                        <li><a href="#" class="en">Blog</a><a href="#" class="ar">المدونة</a></li>
+                        <li><a href="#" class="en">Careers</a><a href="#" class="ar">وظائف</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="en">Contact</h4>
+                    <h4 class="ar">اتصل بنا</h4>
+                    <ul>
+                        <li style="color: var(--text-muted);"><i class="fas fa-envelope"></i> hello@octobot.ai</li>
+                        <li style="color: var(--text-muted);"><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 OctoBot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
