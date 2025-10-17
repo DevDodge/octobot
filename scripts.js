@@ -218,7 +218,7 @@ if (header) {
  * Counts up from 0 to target value
  */
 let conversionRate = 0;
-const conversionTarget = 37;
+const conversionTarget = 95;
 const conversionEl = document.getElementById('conversionRate');
 if (conversionEl) {
     const animateConversion = () => {
