@@ -2661,6 +2661,19 @@ function updateFloatingPoolParallax() {
 window.addEventListener('resize', updateFloatingPoolParallax);
 document.addEventListener('DOMContentLoaded', updateFloatingPoolParallax);
 
+
+// Set CSS custom property for viewport height
+function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+}
+
+// Update on resize and orientation change
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+
+// Initial call
+setViewportHeight();
 // ============================================
 // END OF ENTERPRISE TRANSFORM
 // ============================================

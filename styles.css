@@ -4919,12 +4919,12 @@ body {
     }
     
     .floating-card[data-industry="ecommerce"] {
-        bottom: 12%;
+        bottom: 5%;
         left: 15%;
     }
     
     .floating-card[data-industry="education"] {
-        bottom: 12%;
+        bottom: 5%;
         right: 15%;
         left: auto;
     }
