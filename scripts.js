@@ -333,18 +333,18 @@ let currentTheme = localStorage.getItem('octobot_theme') || 'light';
 const applyTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('octobot_theme', theme);
-    
+
     // Update icon
     if (themeIcon) {
         themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
     }
-    
+
     // Update particles opacity
     const particles = document.querySelectorAll('.particle');
     particles.forEach(particle => {
         particle.style.opacity = theme === 'dark' ? '0.6' : '0.3';
     });
-    
+
     // Trigger event for other components that might need to update
     window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
 };
@@ -363,12 +363,12 @@ if (themeToggle) {
 // Watch for system theme changes
 if (window.matchMedia) {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     // Only apply system theme if user hasn't manually selected one
     if (!localStorage.getItem('octobot_theme')) {
         applyTheme(mediaQuery.matches ? 'dark' : 'light');
     }
-    
+
     // Listen for changes
     mediaQuery.addEventListener('change', (e) => {
         // Only change if user hasn't manually selected a theme
@@ -726,24 +726,35 @@ function initPortfolioModal() {
 
     // Portfolio detail content
     const portfolioDetails = {
-        'legendswear': {
-            title: 'LegendsWear Success Story',
-            titleAr: 'قصة نجاح LegendsWear',
+        'Qadroon': {
+            title: 'Qadroon Foundation Success Story',
+            titleAr: 'قصة نجاح مؤسسة قادرون',
             content: `
-                <div class="portfolio-detail">
-                    <h3><span class="en">The Challenge</span><span class="ar">التحدي</span></h3>
-                    <p><span class="en">LegendsWear needed to handle hundreds of daily inquiries while maintaining personalized service.</span><span class="ar">احتاجت LegendsWear للتعامل مع مئات الاستفسارات اليومية مع الحفاظ على الخدمة الشخصية.</span></p>
-                    
-                    <h3><span class="en">Our Solution</span><span class="ar">حلنا</span></h3>
-                    <p><span class="en">We implemented an AI assistant that understands fashion preferences and guides customers to perfect purchases.</span><span class="ar">قمنا بتطبيق مساعد ذكي يفهم تفضيلات الموضة ويوجه العملاء للشراء المثالي.</span></p>
-                    
-                    <h3><span class="en">Results</span><span class="ar">النتائج</span></h3>
-                    <ul>
-                        <li><span class="en">45% increase in sales</span><span class="ar">زيادة 45% في المبيعات</span></li>
-                        <li><span class="en">2-second average response time</span><span class="ar">متوسط وقت الاستجابة 2 ثانية</span></li>
-                        <li><span class="en">24/7 customer support</span><span class="ar">دعم العملاء على مدار الساعة</span></li>
-                    </ul>
-                </div>
+                        <div class="portfolio-detail">
+            <h3><span class="en">Results that speak for themselves.✅</span>
+            <span class="ar">✅ نتائج تتكلم عن نفسها</span></h3>
+            <ul>
+             <li>
+                    <span class="en">Enhanced Operational Efficiency for the Foundation's Team</span>
+                    <span class="ar">زيادة الكفاءة التشغيلية للفريق للتركيز على تقديم الرعاية المباشرة</span>
+                </li>
+
+                <li>
+                    <span class="en">Instant Access to Essential Care Information 24/7</span>
+                    <span class="ar">تسهيل فوري للوصول إلى معلومات الرعاية الأساسية على مدار الساعة</span>
+                </li>
+                <li>
+                    <span class="en">Delivering human,supportive conversations,in every dialect your customers speak. 💬🤝</span>
+                    <span class="ar">تقديم تواصل إنساني وداعم متعدد اللهجات للعملاء</span>
+                </li>
+                <li>
+                    <span class="en">Streamlining bookings and services,so your customers never have to wait⏱️</span>
+                    <span class="ar">تبسيط عملية الحجزات والخدمات لتقليل الانتظار</span>
+                </li>
+               
+            </ul>
+        </div>
+
             `
         },
         'hiralearning': {
@@ -762,18 +773,32 @@ function initPortfolioModal() {
                 </div>
             `
         },
-        'egyptgamers': {
-            title: 'Egypt Gamers Success Story',
-            titleAr: 'قصة نجاح Egypt Gamers',
+        'IByco': {
+            title: 'I Byco: From Simple Chat to a Sales Intelligence Powerhouse',
+            titleAr: 'I Byco: من مجرد محادثات إلى محرك ذكاء بيعي متكامل',
             content: `
-                <div class="portfolio-detail">
-                    <h3><span class="en">Results</span><span class="ar">النتائج</span></h3>
-                    <ul>
-                        <li><span class="en">31% revenue growth</span><span class="ar">نمو الإيرادات 31%</span></li>
-                        <li><span class="en">24/7 gaming support</span><span class="ar">دعم الألعاب على مدار الساعة</span></li>
-                    </ul>
-                </div>
-            `
+        <div class="portfolio-detail">
+            <h3><span class="en">Strategic Outcomes</span><span class="ar">النتائج الاستراتيجية</span></h3>
+            <ul>
+                <li>
+                    <span class="en">Reignite your customer connections with smart re-targeting powered by Google Sheets integration</span>
+                    <span class="ar">تفعيل استراتيجية أعادة استهداف العملاء من خلال الربط مع Google Sheets</span>
+                </li>
+                <li>
+                    <span class="en">Get deep insights into every customer’s needs to instantly identify the products they truly want </span>
+                    <span class="ar">تحليل  شامل لكل عميل بناء علي استفسارة لمعرفة افضل منتج علية طلب بشكل كبير</span>
+                </li>
+                <li>
+                    <span class="en">Increase your conversion rate by 70% turning inquiries into real sales</span>
+                    <span class="ar">زيادة 70% في معدل تحويل الاستفسارات إلى مبيعات فعلية</span>
+                </li>
+                <li>
+                    <span class="en">Turn every comment into a sales opportunity—and close it successfully</span>
+                    <span class="ar">الرد علي جميع التعليقات و تحويلها لصفقات بيه ناجحه</span>
+                </li>
+            </ul>
+        </div>
+    `
         },
         'beautycorner': {
             title: 'Beauty Corner Success Story',
@@ -917,7 +942,7 @@ if (menuToggle) {
  */
 const chatDemo = document.querySelector('.chat-demo');
 if (chatDemo) {
-       const demoMessages = [
+    const demoMessages = [
         { type: 'user', text: { en: 'What are your working hours?', ar: 'ما هي ساعات العمل؟' } },
         { type: 'bot', text: { en: "I'm available 24/7! How can I help you today?", ar: 'أنا متاح 24/7! كيف يمكنني مساعدتك اليوم؟' } },
         { type: 'user', text: { en: 'So, does Octobot just reply to customers using AI?', ar: 'يعني أكتبوت بيرد علي العملاء بالذكاء الاصطناعي بس ؟' } },
@@ -2065,7 +2090,7 @@ const featureContent = {
             content: industryContent.service
         }
     },
-     // E-commerce Plans
+    // E-commerce Plans
     ecommerce: {
         personalization: {
             title: { en: "Smart Personalization", ar: "تخصيص ذكي" },
@@ -2100,7 +2125,7 @@ const featureContent = {
             }
         }
     },
-    
+
     // Education Plans
     education: {
         learning: {
@@ -2253,16 +2278,16 @@ function initOrbitalTransform() {
 function typeModalText(container, text, speed = 50) {
     const textElement = container.querySelector('.typing-text');
     const cursor = container.querySelector('.typing-cursor');
-    
+
     if (!textElement || !text) return;
-    
+
     // Clear existing text and set direction
     textElement.textContent = '';
     textElement.innerHTML = '';
-    
+
     // Check if text contains Arabic characters
     const containsArabic = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/.test(text);
-    
+
     if (containsArabic) {
         textElement.style.direction = 'rtl';
         textElement.style.textAlign = 'right';
@@ -2270,10 +2295,10 @@ function typeModalText(container, text, speed = 50) {
         textElement.style.direction = 'ltr';
         textElement.style.textAlign = 'left';
     }
-    
+
     // Show cursor
     if (cursor) cursor.style.opacity = '1';
-    
+
     // Create array of characters or words to type
     let segments;
     if (containsArabic) {
@@ -2283,48 +2308,48 @@ function typeModalText(container, text, speed = 50) {
         // For Latin scripts, split by characters
         segments = [...text];
     }
-    
+
     let index = 0;
     let visibleText = '';
-    
+
     function type() {
         if (index < segments.length) {
             visibleText += segments[index];
             textElement.textContent = visibleText;
             index++;
-            
+
             // Auto scroll if content overflows
             const modalBody = container.closest('.modal-body');
             if (modalBody && modalBody.scrollHeight > modalBody.clientHeight) {
                 modalBody.scrollTop = modalBody.scrollHeight;
             }
-            
+
             // Determine typing speed with natural pauses
             let typingSpeed = speed;
-            const currentSegment = segments[index-1];
-            
+            const currentSegment = segments[index - 1];
+
             // Add longer pauses after punctuation
             if (/[.!?،؟]$/.test(currentSegment.trim())) {
                 typingSpeed = speed * 3; // Longer pause after sentence endings
-            } 
+            }
             // Add medium pauses after commas and similar punctuation
             else if (/[,;:،]$/.test(currentSegment.trim())) {
                 typingSpeed = speed * 2; // Medium pause after commas
             }
-            
+
             // For Arabic, keep consistent word-based timing regardless of word length
             if (containsArabic) {
                 // Base speed for words, don't make it too fast for long words
                 typingSpeed = speed + 10;
             }
-            
+
             setTimeout(type, typingSpeed);
         } else {
             // Typing complete - hide cursor after a brief delay
             if (cursor) {
                 // Show a few blinks first, then hide
                 cursor.style.animation = 'cursorBlink 1s 3'; // Blink 3 times
-                
+
                 // Hide the cursor after the animation completes
                 setTimeout(() => {
                     cursor.style.opacity = '0';
@@ -2333,31 +2358,31 @@ function typeModalText(container, text, speed = 50) {
             }
         }
     }
-    
+
     // Start typing with a small delay
     setTimeout(type, 300);  // Longer initial delay
 }
 
 // Add this code to your JS file to fix the modal display
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Fix industry modal display
     const industryModal = document.getElementById('industryModal');
     if (industryModal) {
         // Override the existing style using style attribute
         industryModal.setAttribute('style', 'display: none !important');
-        
+
         // Add class-based handler for .active class
         const originalSetAttribute = industryModal.setAttribute;
-        industryModal.setAttribute = function(name, value) {
+        industryModal.setAttribute = function (name, value) {
             originalSetAttribute.call(this, name, value);
-            
+
             if (name === 'class' && value.includes('active')) {
                 this.style.setProperty('display', 'flex', 'important');
             } else if (name === 'class' && !value.includes('active')) {
                 this.style.setProperty('display', 'none', 'important');
             }
         };
-        
+
         // Handle classList.add/remove for .active
         const observer = new MutationObserver(mutations => {
             mutations.forEach(mutation => {
@@ -2370,7 +2395,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         observer.observe(industryModal, { attributes: true });
     }
 });
@@ -2398,85 +2423,85 @@ function initFloatingPoolParallax() {
     const floatingCards = document.querySelectorAll('.floating-card');
     const poolContainer = document.querySelector('.floating-pool-container');
     const enterpriseSection = document.querySelector('.enterprise-transform');
-    
+
     if (!floatingCards.length || !poolContainer) return;
-    
+
     // Enhanced parallax variables
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
     let targetY = 0;
     let scrollProgress = 0;
-    
+
     // Pool boundaries for constraint
     const poolBounds = poolContainer.getBoundingClientRect();
-    
+
     document.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     });
-    
-        // Enhanced animation loop with depth layers
+
+    // Enhanced animation loop with depth layers
     function animateParallax() {
         targetX += (mouseX - targetX) * 0.08;
         targetY += (mouseY - targetY) * 0.08;
-        
+
         floatingCards.forEach((card, index) => {
             const row = Math.floor(index / 4);
             const col = index % 4;
             const speed = 0.5 + (row * 0.3) + (col * 0.1); // Depth based on position
-            
+
             // Base parallax from mouse
             const mouseXOffset = targetX * 40 * speed;
             const mouseYOffset = targetY * 30 * speed;
-            
+
             // Scroll-based parallax
             const scrollOffset = scrollProgress * 100 * (row + 1) * 0.5;
-            
+
             // Combined transformations
             const x = mouseXOffset + Math.sin(Date.now() * 0.001 + index) * 5;
             const y = mouseYOffset - scrollOffset + Math.cos(Date.now() * 0.001 + index) * 3;
             const z = speed * 50;
             const rotateX = targetY * 3 * speed;
             const rotateY = targetX * 3 * speed;
-            
+
             card.style.transform = `
                 translate3d(${x}px, ${y}px, ${z}px)
                 rotateX(${rotateX}deg) 
                 rotateY(${rotateY}deg)
                 scale(${0.9 + scrollProgress * 0.1})
             `;
-            
+
             // Opacity based on scroll
             card.style.opacity = 0.9 + (0.1 * (1 - Math.abs(scrollProgress - 0.5) * 2));
         });
-        
+
         requestAnimationFrame(animateParallax);
     }
-    
+
     animateParallax();
-    
+
     // Scroll-based parallax
-       // Enhanced scroll-based parallax
+    // Enhanced scroll-based parallax
     function handleScrollParallax() {
         if (!enterpriseSection) return;
-        
+
         const scrollY = window.scrollY;
         const sectionTop = enterpriseSection.offsetTop;
         const sectionHeight = enterpriseSection.offsetHeight;
         const windowHeight = window.innerHeight;
-        
+
         // Calculate section visibility
         const sectionVisibleStart = sectionTop - windowHeight;
         const sectionVisibleEnd = sectionTop + sectionHeight;
-        
+
         if (scrollY >= sectionVisibleStart && scrollY <= sectionVisibleEnd) {
             // Normalized scroll progress (0 to 1)
             scrollProgress = (scrollY - sectionVisibleStart) / (sectionVisibleEnd - sectionVisibleStart);
             scrollProgress = Math.max(0, Math.min(1, scrollProgress));
         }
     }
-    
+
     // Throttled scroll handler
     let scrollTicking = false;
     window.addEventListener('scroll', () => {
@@ -2488,7 +2513,7 @@ function initFloatingPoolParallax() {
             scrollTicking = true;
         }
     }, { passive: true });
-        
+
     // Initial setup
     handleScrollParallax();
 }
@@ -2512,66 +2537,66 @@ window.addEventListener('resize', () => {
 function initEnhancedEnterpriseFloating() {
     const floatingCards = document.querySelectorAll('.floating-card');
     const poolContainer = document.querySelector('.floating-pool-container');
-    
+
     if (!floatingCards.length || !poolContainer) return;
-    
+
     // Track mouse position
     let mouseX = 0;
     let mouseY = 0;
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 2;
-    
+
     // Update mouse position
     document.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX - centerX) / centerX; // -1 to 1
         mouseY = (e.clientY - centerY) / centerY; // -1 to 1
     });
-    
+
     // Handle parallax effect with depth
     function animateCards() {
         floatingCards.forEach(card => {
             // Get card's position data
             const zIndex = parseFloat(card.style.getPropertyValue('--z-index') || 1);
-            
+
             // Calculate depth factor (cards with higher z-index move more)
             const depthFactor = zIndex * 0.15;
-            
+
             // Calculate parallax offset based on mouse position and depth
             const xOffset = mouseX * 40 * depthFactor;
             const yOffset = mouseY * 30 * depthFactor;
             const rotateX = mouseY * -3 * depthFactor;
             const rotateY = mouseX * 3 * depthFactor;
-            
+
             // Apply transform - add to the current animation
             const currentTransform = getComputedStyle(card).transform;
-            
+
             // Only apply if not in mobile view
             if (window.innerWidth > 768) {
                 card.style.transform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px)) 
                                       rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             }
         });
-        
+
         requestAnimationFrame(animateCards);
     }
-    
+
     // Initialize parallax animation
     if (window.innerWidth > 768) {
         requestAnimationFrame(animateCards);
     }
-    
+
     // Update on window resize
     window.addEventListener('resize', () => {
         centerX = window.innerWidth / 2;
         centerY = window.innerHeight / 2;
     });
-    
+
     // Fix modal display issue
     const industryModal = document.getElementById('industryModal');
     if (industryModal) {
         // Override the !important display property
         industryModal.style.setProperty('display', 'none', 'important');
-        
+
         // Fix the display when active
         const modalObserver = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
@@ -2584,7 +2609,7 @@ function initEnhancedEnterpriseFloating() {
                 }
             });
         });
-        
+
         modalObserver.observe(industryModal, { attributes: true });
     }
 }
@@ -2593,26 +2618,26 @@ function initEnhancedEnterpriseFloating() {
 // Mobile tooltip handling for Enterprise section
 function initMobileTooltips() {
     if (window.innerWidth > 768) return; // Only for mobile
-    
+
     const orbitalIcons = document.querySelectorAll('.orbital-icon:not(.info-btn)');
     let activeTooltip = null;
-    
+
     orbitalIcons.forEach(icon => {
-        icon.addEventListener('click', function(e) {
+        icon.addEventListener('click', function (e) {
             e.stopPropagation();
-            
+
             const tooltip = this.querySelector('.orbital-tooltip');
             if (!tooltip) return;
-            
+
             // Close any open tooltip
             if (activeTooltip && activeTooltip !== tooltip) {
                 activeTooltip.classList.remove('show-mobile');
             }
-            
+
             // Toggle current tooltip
             tooltip.classList.toggle('show-mobile');
             activeTooltip = tooltip.classList.contains('show-mobile') ? tooltip : null;
-            
+
             // Auto-hide after 3 seconds
             if (activeTooltip) {
                 setTimeout(() => {
@@ -2622,7 +2647,7 @@ function initMobileTooltips() {
             }
         });
     });
-    
+
     // Close tooltip when clicking elsewhere
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.orbital-icon') && activeTooltip) {
@@ -2635,7 +2660,7 @@ function initMobileTooltips() {
 // Initialize mobile tooltips
 document.addEventListener('DOMContentLoaded', () => {
     initMobileTooltips();
-    
+
     // Reinitialize on resize
     let resizeTimer;
     window.addEventListener('resize', () => {
@@ -2647,7 +2672,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Update the floating pool parallax to handle mobile differently
 function updateFloatingPoolParallax() {
     const isMobile = window.innerWidth <= 768;
-    
+
     if (isMobile) {
         // Simplified mobile handling - no parallax, just floating
         const floatingCards = document.querySelectorAll('.floating-card');
