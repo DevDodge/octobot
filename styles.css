@@ -3235,6 +3235,8 @@ body {
 .icon-item:hover i {
     color: white;
 }
+
+
 /* ============================================ */
 /* ENTERPRISE TRANSFORM - FLOATING POOL DESIGN  */
 /* ============================================ */
@@ -4308,6 +4310,7 @@ body {
 .orbital-icon.west:hover { 
     transform: translateY(-50%) translateX(-2px) scale(1.1); 
 }
+
 /* ============================================ */
 /* ENTERPRISE TRANSFORM - FLOATING POOL DESIGN  */
 /* ============================================ */

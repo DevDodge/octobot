@@ -933,22 +933,43 @@ if (menuToggle) {
 }
 
 // ============================================
-// CHAT DEMO FUNCTIONALITY
+// CHAT DEMO FUNCTIONALITY - STABLE VERSION
 // ============================================
 
 /**
- * Automated chat demonstration
+ * Automated chat demonstration with fixed height to prevent layout shifts
  * Shows example conversations to demonstrate chatbot capabilities
  */
-const chatDemo = document.querySelector('.chat-demo');
-if (chatDemo) {
+function initChatDemo() {
+    const chatDemo = document.querySelector('.chat-demo');
+    if (!chatDemo) return;
+
+    console.log('💬 Initializing chat demo');
+
+    // ✅ FIX: Set fixed height on chat demo to prevent bouncing
+    const statsPreview = chatDemo.querySelector('.stats-preview');
+    if (statsPreview) {
+        // Calculate and set minimum height based on content
+        const initialHeight = chatDemo.offsetHeight;
+        chatDemo.style.minHeight = `${initialHeight}px`;
+        
+        // Also set max height to prevent expansion
+        chatDemo.style.maxHeight = `${initialHeight + 100}px`;
+        chatDemo.style.overflowY = 'auto';
+        chatDemo.style.scrollBehavior = 'smooth';
+        
+        console.log(`📏 Chat demo height fixed at: ${initialHeight}px`);
+    }
+
     const demoMessages = [
         { type: 'user', text: { en: 'What are your working hours?', ar: 'ما هي ساعات العمل؟' } },
         { type: 'bot', text: { en: "I'm available 24/7! How can I help you today?", ar: 'أنا متاح 24/7! كيف يمكنني مساعدتك اليوم؟' } },
         { type: 'user', text: { en: 'So, does Octobot just reply to customers using AI?', ar: 'يعني أكتبوت بيرد علي العملاء بالذكاء الاصطناعي بس ؟' } },
         { type: 'bot', text: { en: 'Definitely not! Octobot can actually run your whole organization.', ar: 'لا طبعا اكتبوت يقدر انه يدير منظمة كاملة يا فندم.' } }
     ];
+    
     let messageIndex = 2; // Start after initial messages
+    let animationInterval = null;
 
     /**
      * Creates a chat message element
@@ -958,6 +979,7 @@ if (chatDemo) {
     function createChatMessage(message) {
         const div = document.createElement('div');
         div.className = 'chat-message';
+        
         const avatarContent = message.type === 'user'
             ? '👤'
             : '<img src="https://octobot.sirv.com/robot1.png" alt="OctoBot" class="avatar-img" />';
@@ -970,6 +992,11 @@ if (chatDemo) {
                 <span class="ar">${message.text.ar}</span>
             </div>
         `;
+        
+        // ✅ FIX: Prevent layout shift during insertion
+        div.style.opacity = '0';
+        div.style.transform = 'translateY(10px)';
+        
         return div;
     }
 
@@ -979,7 +1006,7 @@ if (chatDemo) {
      */
     function createTypingIndicator() {
         const div = document.createElement('div');
-        div.className = 'chat-message';
+        div.className = 'chat-message typing-message';
         div.innerHTML = `
             <div class="chat-avatar bot-avatar">
                 <img src="https://octobot.sirv.com/robot1.png" alt="OctoBot" class="avatar-img" />
@@ -993,8 +1020,60 @@ if (chatDemo) {
         return div;
     }
 
-    // Auto-play chat messages
-    setInterval(() => {
+    /**
+     * Smoothly insert message with fade-in animation
+     */
+    function insertMessage(messageEl) {
+        const statsPreview = chatDemo.querySelector('.stats-preview');
+        if (statsPreview) {
+            chatDemo.insertBefore(messageEl, statsPreview);
+            
+            // ✅ Trigger smooth fade-in animation
+            requestAnimationFrame(() => {
+                messageEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                messageEl.style.opacity = '1';
+                messageEl.style.transform = 'translateY(0)';
+            });
+            
+            // ✅ Smooth scroll to bottom if needed
+            if (chatDemo.scrollHeight > chatDemo.clientHeight) {
+                chatDemo.scrollTo({
+                    top: chatDemo.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+
+    /**
+     * Reset demo to initial state
+     */
+    function resetDemo() {
+        const messages = chatDemo.querySelectorAll('.chat-message');
+        messages.forEach((msg, index) => {
+            if (index > 1) {
+                // ✅ Fade out before removal
+                msg.style.transition = 'opacity 0.3s ease';
+                msg.style.opacity = '0';
+                setTimeout(() => msg.remove(), 300);
+            }
+        });
+        
+        // ✅ Scroll back to top smoothly
+        setTimeout(() => {
+            chatDemo.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 400);
+        
+        messageIndex = 2;
+    }
+
+    /**
+     * Main animation loop
+     */
+    function animateChat() {
         if (messageIndex < demoMessages.length) {
             const message = demoMessages[messageIndex];
             const messageEl = createChatMessage(message);
@@ -1002,28 +1081,61 @@ if (chatDemo) {
             // Add typing indicator for bot messages
             if (message.type === 'bot') {
                 const typingEl = createTypingIndicator();
-                chatDemo.insertBefore(typingEl, chatDemo.querySelector('.stats-preview'));
+                insertMessage(typingEl);
 
                 setTimeout(() => {
                     typingEl.remove();
-                    chatDemo.insertBefore(messageEl, chatDemo.querySelector('.stats-preview'));
+                    insertMessage(messageEl);
                 }, 1500);
             } else {
-                chatDemo.insertBefore(messageEl, chatDemo.querySelector('.stats-preview'));
+                insertMessage(messageEl);
             }
 
             messageIndex++;
         } else {
             // Reset demo when finished
-            const messages = chatDemo.querySelectorAll('.chat-message');
-            messages.forEach((msg, index) => {
-                if (index > 1) msg.remove();
-            });
-            messageIndex = 2;
+            resetDemo();
         }
-    }, 4000);
+    }
+
+    // ✅ Start animation only if element is visible (performance optimization)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!animationInterval) {
+                    console.log('▶️ Chat demo started');
+                    animationInterval = setInterval(animateChat, 4000);
+                }
+            } else {
+                if (animationInterval) {
+                    console.log('⏸️ Chat demo paused');
+                    clearInterval(animationInterval);
+                    animationInterval = null;
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(chatDemo);
+
+    // ✅ Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        if (animationInterval) {
+            clearInterval(animationInterval);
+        }
+    });
 }
 
+// Initialize chat demo when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChatDemo);
+} else {
+    initChatDemo();
+}
+
+// ============================================
+// END OF CHAT DEMO
+// ============================================
 // ============================================
 // SMOOTH SCROLLING
 // ============================================
@@ -2163,6 +2275,30 @@ const featureContent = {
     },
 };
 
+// ============================================
+// ORBITAL TRANSFORM & MODAL FUNCTIONALITY
+// ============================================
+
+/**
+ * Initialize orbital icon interactions and modal system
+ */
+function initOrbitalTransform() {
+    const industryModal = document.getElementById('industryModal');
+    const modalIcon = document.getElementById('modalIndustryIcon');
+    const modalTitle = document.getElementById('modalIndustryTitle');
+    const modalBody = document.getElementById('modalIndustryBody');
+    const modalBackdrop = industryModal?.querySelector('.modal-backdrop');
+    const modalClose = industryModal?.querySelector('.modal-close');
+
+    if (!industryModal) {
+        console.error('❌ Industry modal not found in DOM');
+        return;
+    }
+
+    console.log('✅ Initializing orbital transform and modals');
+
+
+    };
 
 // ============================================
 // ENTERPRISE TRANSFORM - ORBITAL INTERACTION
@@ -2415,33 +2551,59 @@ if (typeof initializeAllSystems !== 'undefined') {
     };
 }
 
+
 // ============================================
-// ENTERPRISE TRANSFORM - PARALLAX EFFECT
+// ENTERPRISE TRANSFORM - STABLE VERSION
 // ============================================
 
+/**
+ * Detects if device is mobile
+ * @returns {boolean}
+ */
+function isMobileDevice() {
+    return window.innerWidth <= 768 || 
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+/**
+ * Desktop parallax effect with mouse interaction
+ * @returns {Function|undefined} Cleanup function
+ */
 function initFloatingPoolParallax() {
+    // Skip on mobile devices
+    if (isMobileDevice()) {
+        console.log('📱 Mobile device detected - skipping parallax animations');
+        return;
+    }
+
     const floatingCards = document.querySelectorAll('.floating-card');
     const poolContainer = document.querySelector('.floating-pool-container');
     const enterpriseSection = document.querySelector('.enterprise-transform');
 
-    if (!floatingCards.length || !poolContainer) return;
+    if (!floatingCards.length || !poolContainer) {
+        console.warn('⚠️ Enterprise cards not found');
+        return;
+    }
 
-    // Enhanced parallax variables
+    console.log('🖥️ Desktop mode - initializing parallax');
+
+    // Parallax state
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
     let targetY = 0;
     let scrollProgress = 0;
+    let rafId = null;
 
-    // Pool boundaries for constraint
-    const poolBounds = poolContainer.getBoundingClientRect();
-
-    document.addEventListener('mousemove', (e) => {
+    // Mouse move handler
+    const handleMouseMove = (e) => {
         mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-    });
+    };
 
-    // Enhanced animation loop with depth layers
+    document.addEventListener('mousemove', handleMouseMove);
+
+    // Animation loop
     function animateParallax() {
         targetX += (mouseX - targetX) * 0.08;
         targetY += (mouseY - targetY) * 0.08;
@@ -2449,16 +2611,12 @@ function initFloatingPoolParallax() {
         floatingCards.forEach((card, index) => {
             const row = Math.floor(index / 4);
             const col = index % 4;
-            const speed = 0.5 + (row * 0.3) + (col * 0.1); // Depth based on position
+            const speed = 0.5 + (row * 0.3) + (col * 0.1);
 
-            // Base parallax from mouse
             const mouseXOffset = targetX * 40 * speed;
             const mouseYOffset = targetY * 30 * speed;
-
-            // Scroll-based parallax
             const scrollOffset = scrollProgress * 100 * (row + 1) * 0.5;
 
-            // Combined transformations
             const x = mouseXOffset + Math.sin(Date.now() * 0.001 + index) * 5;
             const y = mouseYOffset - scrollOffset + Math.cos(Date.now() * 0.001 + index) * 3;
             const z = speed * 50;
@@ -2472,17 +2630,13 @@ function initFloatingPoolParallax() {
                 scale(${0.9 + scrollProgress * 0.1})
             `;
 
-            // Opacity based on scroll
             card.style.opacity = 0.9 + (0.1 * (1 - Math.abs(scrollProgress - 0.5) * 2));
         });
 
-        requestAnimationFrame(animateParallax);
+        rafId = requestAnimationFrame(animateParallax);
     }
 
-    animateParallax();
-
-    // Scroll-based parallax
-    // Enhanced scroll-based parallax
+    // Scroll parallax handler
     function handleScrollParallax() {
         if (!enterpriseSection) return;
 
@@ -2491,12 +2645,10 @@ function initFloatingPoolParallax() {
         const sectionHeight = enterpriseSection.offsetHeight;
         const windowHeight = window.innerHeight;
 
-        // Calculate section visibility
         const sectionVisibleStart = sectionTop - windowHeight;
         const sectionVisibleEnd = sectionTop + sectionHeight;
 
         if (scrollY >= sectionVisibleStart && scrollY <= sectionVisibleEnd) {
-            // Normalized scroll progress (0 to 1)
             scrollProgress = (scrollY - sectionVisibleStart) / (sectionVisibleEnd - sectionVisibleStart);
             scrollProgress = Math.max(0, Math.min(1, scrollProgress));
         }
@@ -2504,7 +2656,7 @@ function initFloatingPoolParallax() {
 
     // Throttled scroll handler
     let scrollTicking = false;
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         if (!scrollTicking) {
             window.requestAnimationFrame(() => {
                 handleScrollParallax();
@@ -2512,112 +2664,115 @@ function initFloatingPoolParallax() {
             });
             scrollTicking = true;
         }
-    }, { passive: true });
+    };
 
-    // Initial setup
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Initialize
     handleScrollParallax();
+    animateParallax();
+
+    // Return cleanup function
+    return () => {
+        console.log('🧹 Cleaning up parallax');
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+        }
+        document.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('scroll', handleScroll);
+    };
 }
 
-// Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-    initFloatingPoolParallax();
-    initOrbitalTransform(); // Keep existing orbital functionality
-});
-
-// Reinitialize on resize
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        initFloatingPoolParallax();
-    }, 250);
-});
-
-// Enhanced Parallax & Interactive Floating for Enterprise Cards
+/**
+ * Desktop enhanced floating effect
+ * @returns {Function|undefined} Cleanup function
+ */
 function initEnhancedEnterpriseFloating() {
+    // Skip on mobile
+    if (isMobileDevice()) {
+        return;
+    }
+
     const floatingCards = document.querySelectorAll('.floating-card');
     const poolContainer = document.querySelector('.floating-pool-container');
 
     if (!floatingCards.length || !poolContainer) return;
 
-    // Track mouse position
     let mouseX = 0;
     let mouseY = 0;
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 2;
+    let rafId = null;
 
-    // Update mouse position
-    document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX - centerX) / centerX; // -1 to 1
-        mouseY = (e.clientY - centerY) / centerY; // -1 to 1
-    });
+    const handleMouseMove = (e) => {
+        mouseX = (e.clientX - centerX) / centerX;
+        mouseY = (e.clientY - centerY) / centerY;
+    };
 
-    // Handle parallax effect with depth
+    document.addEventListener('mousemove', handleMouseMove);
+
     function animateCards() {
         floatingCards.forEach(card => {
-            // Get card's position data
             const zIndex = parseFloat(card.style.getPropertyValue('--z-index') || 1);
-
-            // Calculate depth factor (cards with higher z-index move more)
             const depthFactor = zIndex * 0.15;
 
-            // Calculate parallax offset based on mouse position and depth
             const xOffset = mouseX * 40 * depthFactor;
             const yOffset = mouseY * 30 * depthFactor;
             const rotateX = mouseY * -3 * depthFactor;
             const rotateY = mouseX * 3 * depthFactor;
 
-            // Apply transform - add to the current animation
-            const currentTransform = getComputedStyle(card).transform;
-
-            // Only apply if not in mobile view
-            if (window.innerWidth > 768) {
-                card.style.transform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px)) 
-                                      rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            }
+            card.style.transform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px)) 
+                                  rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
 
-        requestAnimationFrame(animateCards);
+        rafId = requestAnimationFrame(animateCards);
     }
 
-    // Initialize parallax animation
-    if (window.innerWidth > 768) {
-        requestAnimationFrame(animateCards);
-    }
-
-    // Update on window resize
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
         centerX = window.innerWidth / 2;
         centerY = window.innerHeight / 2;
-    });
+    };
 
-    // Fix modal display issue
-    const industryModal = document.getElementById('industryModal');
-    if (industryModal) {
-        // Override the !important display property
-        industryModal.style.setProperty('display', 'none', 'important');
+    window.addEventListener('resize', handleResize);
 
-        // Fix the display when active
-        const modalObserver = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                    if (industryModal.classList.contains('active')) {
-                        industryModal.style.setProperty('display', 'flex', 'important');
-                    } else {
-                        industryModal.style.setProperty('display', 'none', 'important');
-                    }
-                }
-            });
-        });
+    animateCards();
 
-        modalObserver.observe(industryModal, { attributes: true });
-    }
+    // Return cleanup function
+    return () => {
+        console.log('🧹 Cleaning up enhanced floating');
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+        }
+        document.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('resize', handleResize);
+    };
 }
 
+/**
+ * Mobile-specific initialization - removes all animations
+ */
+function initMobileEnterprise() {
+    if (!isMobileDevice()) return;
 
-// Mobile tooltip handling for Enterprise section
+    console.log('📱 Initializing mobile enterprise (static mode)');
+
+    const floatingCards = document.querySelectorAll('.floating-card');
+    
+    // Remove all inline transforms on mobile
+    floatingCards.forEach(card => {
+        card.style.transform = '';
+        card.style.opacity = '';
+        card.style.willChange = 'auto';
+    });
+}
+
+/**
+ * Mobile tooltip handling
+ */
 function initMobileTooltips() {
-    if (window.innerWidth > 768) return; // Only for mobile
+    if (!isMobileDevice()) return;
+
+    console.log('📱 Initializing mobile tooltips');
 
     const orbitalIcons = document.querySelectorAll('.orbital-icon:not(.info-btn)');
     let activeTooltip = null;
@@ -2649,56 +2804,174 @@ function initMobileTooltips() {
     });
 
     // Close tooltip when clicking elsewhere
-    document.addEventListener('click', (e) => {
+    const handleDocumentClick = (e) => {
         if (!e.target.closest('.orbital-icon') && activeTooltip) {
             activeTooltip.classList.remove('show-mobile');
             activeTooltip = null;
         }
-    });
+    };
+
+    document.addEventListener('click', handleDocumentClick);
 }
 
-// Initialize mobile tooltips
-document.addEventListener('DOMContentLoaded', () => {
-    initMobileTooltips();
+/**
+ * Fix modal display issue
+ */
+function fixModalDisplay() {
+    const industryModal = document.getElementById('industryModal');
+    if (!industryModal) return;
 
-    // Reinitialize on resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(initMobileTooltips, 250);
-    });
-});
+    industryModal.style.setProperty('display', 'none', 'important');
 
-// Update the floating pool parallax to handle mobile differently
-function updateFloatingPoolParallax() {
-    const isMobile = window.innerWidth <= 768;
-
-    if (isMobile) {
-        // Simplified mobile handling - no parallax, just floating
-        const floatingCards = document.querySelectorAll('.floating-card');
-        floatingCards.forEach(card => {
-            card.style.transform = ''; // Let CSS animations handle it
+    const modalObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                if (industryModal.classList.contains('active')) {
+                    industryModal.style.setProperty('display', 'flex', 'important');
+                } else {
+                    industryModal.style.setProperty('display', 'none', 'important');
+                }
+            }
         });
-    }
+    });
+
+    modalObserver.observe(industryModal, { attributes: true });
 }
 
-// Add to existing resize handler
-window.addEventListener('resize', updateFloatingPoolParallax);
-document.addEventListener('DOMContentLoaded', updateFloatingPoolParallax);
-
-
-// Set CSS custom property for viewport height
+/**
+ * Set viewport height - ONLY on orientation change, NOT on resize
+ */
 function setViewportHeight() {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    console.log('📏 Viewport height set:', window.innerHeight);
 }
 
-// Update on resize and orientation change
-window.addEventListener('resize', setViewportHeight);
-window.addEventListener('orientationchange', setViewportHeight);
+// ============================================
+// INITIALIZATION
+// ============================================
 
-// Initial call
-setViewportHeight();
+let parallaxCleanup = null;
+let enhancedCleanup = null;
+
+/**
+ * Main initialization function
+ */
+function initEnterpriseTransform() {
+    const isMobile = isMobileDevice();
+    
+    console.log(`\n🚀 Initializing Enterprise Transform - ${isMobile ? 'MOBILE' : 'DESKTOP'} mode\n`);
+
+    if (isMobile) {
+        // Mobile: No animations, static layout
+        initMobileEnterprise();
+        initMobileTooltips();
+        
+        // Disable smooth scrolling on mobile
+        document.documentElement.style.scrollBehavior = 'auto';
+    } else {
+        // Desktop: Full animations
+        parallaxCleanup = initFloatingPoolParallax();
+        enhancedCleanup = initEnhancedEnterpriseFloating();
+    }
+
+    // Common initialization
+    fixModalDisplay();
+}
+
+/**
+ * Cleanup function
+ */
+function cleanupEnterpriseTransform() {
+    console.log('🧹 Cleaning up enterprise transform');
+    
+    if (parallaxCleanup && typeof parallaxCleanup === 'function') {
+        parallaxCleanup();
+        parallaxCleanup = null;
+    }
+    
+    if (enhancedCleanup && typeof enhancedCleanup === 'function') {
+        enhancedCleanup();
+        enhancedCleanup = null;
+    }
+}
+
+// ============================================
+// EVENT HANDLERS
+// ============================================
+
+/**
+ * Handle orientation change
+ */
+let orientationChangeTimer;
+window.addEventListener('orientationchange', () => {
+    clearTimeout(orientationChangeTimer);
+    orientationChangeTimer = setTimeout(() => {
+        console.log('🔄 Orientation changed - reinitializing');
+        
+        cleanupEnterpriseTransform();
+        setViewportHeight(); // Update height on orientation change
+        initEnterpriseTransform();
+    }, 300);
+});
+
+/**
+ * Handle resize - only reinitialize when crossing breakpoint
+ */
+
+let lastWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const currentWidth = window.innerWidth;
+        
+        // Only reinitialize if crossing mobile/desktop breakpoint
+        if ((lastWidth <= 768 && currentWidth > 768) || 
+            (lastWidth > 768 && currentWidth <= 768)) {
+            
+            console.log('📱➡️🖥️ Breakpoint crossed - reinitializing');
+            
+            cleanupEnterpriseTransform();
+            initEnterpriseTransform();
+            
+            lastWidth = currentWidth;
+        }
+    }, 250);
+});
+
+// ============================================
+// DOM READY INITIALIZATION
+// ============================================
+
+/**
+ * Initialize everything when DOM is ready
+ */
+function initializeAll() {
+    console.log('📄 DOM Ready - Starting initialization');
+    
+    // Set viewport height ONCE on load
+    setViewportHeight();
+    
+    // Initialize enterprise transform
+    initEnterpriseTransform();
+    
+    // Initialize orbital transform if it exists
+    if (typeof initOrbitalTransform === 'function') {
+        initOrbitalTransform();
+    } else {
+        console.warn('⚠️ initOrbitalTransform function not found');
+    }
+}
+
+// Execute initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAll);
+} else {
+    // DOM already loaded
+    initializeAll();
+}
+
 // ============================================
 // END OF ENTERPRISE TRANSFORM
 // ============================================
