@@ -800,43 +800,85 @@ function initPortfolioModal() {
         </div>
     `
         },
-        'beautycorner': {
-            title: 'Beauty Corner Success Story',
-            titleAr: 'قصة نجاح Beauty Corner',
+        'Smart Technology': {
+            title: 'Smart Technology Success Story',
+            titleAr: 'قصة نجاح Smart Technology',
             content: `
                 <div class="portfolio-detail">
-                    <h3><span class="en">Results</span><span class="ar">النتائج</span></h3>
-                    <ul>
-                        <li><span class="en">67% increase in conversion</span><span class="ar">زيادة 67% في التحويل</span></li>
-                        <li><span class="en">5k+ consultations delivered</span><span class="ar">أكثر من 5000 استشارة</span></li>
-                    </ul>
-                </div>
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+    <ul>
+        <li>
+            <span class="en">+80% growth in student enrollment after chatbot automation</span>
+            <span class="ar">زيادة +80٪ في تسجيل الطلاب بعد تفعيل المساعد الذكي</span>
+        </li>
+        <li>
+            <span class="en">10K+ trainees assisted annually through instant responses</span>
+            <span class="ar">أكثر من 10,000 متدرب سنويًا تم مساعدتهم عبر الردود الفورية</span>
+        </li>
+        <li>
+            <span class="en">WhatsApp inquiries handled 24/7 with zero delays</span>
+            <span class="ar">إدارة استفسارات واتساب على مدار الساعة بدون أي تأخير</span>
+        </li>
+    </ul>
+</div>
+
             `
         },
-        'techhub': {
-            title: 'Tech Hub Success Story',
-            titleAr: 'قصة نجاح Tech Hub',
+        'OutBox Places': {
+            title: 'OutBox Places Success Story',
+            titleAr: 'قصة نجاح OutBox Places',
             content: `
                 <div class="portfolio-detail">
-                    <h3><span class="en">Results</span><span class="ar">النتائج</span></h3>
-                    <ul>
-                        <li><span class="en">85% reduction in response time</span><span class="ar">تقليل 85% في وقت الاستجابة</span></li>
-                        <li><span class="en">10k+ issues resolved</span><span class="ar">حل أكثر من 10 آلاف مشكلة</span></li>
-                    </ul>
-                </div>
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+    <ul>
+        <li>
+            <span class="en">+85% faster booking response time</span>
+            <span class="ar">تحسن +85٪ في سرعة الرد وحجز الرحلات</span>
+        </li>
+        <li>
+            <span class="en">10K+ happy travelers served automatically</span>
+            <span class="ar">أكثر من 10,000 مسافر سعيد تم خدمتهم تلقائيًا</span>
+        </li>
+        <li>
+            <span class="en">24/7 automated support for all trip inquiries</span>
+            <span class="ar">دعم آلي على مدار الساعة لجميع استفسارات الرحلات</span>
+        </li>
+    </ul>
+</div>
+
             `
         },
-        'fitnessclub': {
-            title: 'Fitness Club Success Story',
-            titleAr: 'قصة نجاح Fitness Club',
+        'MPS Academy System': {
+            title: 'MPS Academy System Success Story',
+            titleAr: 'قصة نجاح MPS Academy System',
             content: `
                 <div class="portfolio-detail">
-                    <h3><span class="en">Results</span><span class="ar">النتائج</span></h3>
-                    <ul>
-                        <li><span class="en">52% increase in retention</span><span class="ar">زيادة 52% في الاحتفاظ</span></li>
-                        <li><span class="en">3k+ active members</span><span class="ar">أكثر من 3000 عضو نشط</span></li>
-                    </ul>
-                </div>
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+    <ul>
+        <li>
+            <span class="en">+90% higher efficiency in lead management</span>
+            <span class="ar">+90٪ كفاءة أعلى في إدارة العملاء والمتابعات</span>
+        </li>
+        <li>
+            <span class="en">5K+ leads organized automatically in Trello</span>
+            <span class="ar">أكثر من 5000 عميل تم تنظيمهم تلقائيًا عبر Trello</span>
+        </li>
+        <li>
+            <span class="en">Sales team productivity boosted with AI assistant</span>
+            <span class="ar">زيادة إنتاجية فريق المبيعات بفضل المساعد الذكي</span>
+        </li>
+    </ul>
+</div>
+
             `
         },
         // Default for any missing case studies
@@ -952,12 +994,12 @@ function initChatDemo() {
         // Calculate and set minimum height based on content
         const initialHeight = chatDemo.offsetHeight;
         chatDemo.style.minHeight = `${initialHeight}px`;
-        
+
         // Also set max height to prevent expansion
         chatDemo.style.maxHeight = `${initialHeight + 100}px`;
         chatDemo.style.overflowY = 'auto';
         chatDemo.style.scrollBehavior = 'smooth';
-        
+
         console.log(`📏 Chat demo height fixed at: ${initialHeight}px`);
     }
 
@@ -967,7 +1009,7 @@ function initChatDemo() {
         { type: 'user', text: { en: 'So, does Octobot just reply to customers using AI?', ar: 'يعني أكتبوت بيرد علي العملاء بالذكاء الاصطناعي بس ؟' } },
         { type: 'bot', text: { en: 'Definitely not! Octobot can actually run your whole organization.', ar: 'لا طبعا اكتبوت يقدر انه يدير منظمة كاملة يا فندم.' } }
     ];
-    
+
     let messageIndex = 2; // Start after initial messages
     let animationInterval = null;
 
@@ -979,7 +1021,7 @@ function initChatDemo() {
     function createChatMessage(message) {
         const div = document.createElement('div');
         div.className = 'chat-message';
-        
+
         const avatarContent = message.type === 'user'
             ? '👤'
             : '<img src="https://octobot.sirv.com/robot1.png" alt="OctoBot" class="avatar-img" />';
@@ -992,11 +1034,11 @@ function initChatDemo() {
                 <span class="ar">${message.text.ar}</span>
             </div>
         `;
-        
+
         // ✅ FIX: Prevent layout shift during insertion
         div.style.opacity = '0';
         div.style.transform = 'translateY(10px)';
-        
+
         return div;
     }
 
@@ -1027,14 +1069,14 @@ function initChatDemo() {
         const statsPreview = chatDemo.querySelector('.stats-preview');
         if (statsPreview) {
             chatDemo.insertBefore(messageEl, statsPreview);
-            
+
             // ✅ Trigger smooth fade-in animation
             requestAnimationFrame(() => {
                 messageEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                 messageEl.style.opacity = '1';
                 messageEl.style.transform = 'translateY(0)';
             });
-            
+
             // ✅ Smooth scroll to bottom if needed
             if (chatDemo.scrollHeight > chatDemo.clientHeight) {
                 chatDemo.scrollTo({
@@ -1058,7 +1100,7 @@ function initChatDemo() {
                 setTimeout(() => msg.remove(), 300);
             }
         });
-        
+
         // ✅ Scroll back to top smoothly
         setTimeout(() => {
             chatDemo.scrollTo({
@@ -1066,7 +1108,7 @@ function initChatDemo() {
                 behavior: 'smooth'
             });
         }, 400);
-        
+
         messageIndex = 2;
     }
 
@@ -2298,7 +2340,7 @@ function initOrbitalTransform() {
     console.log('✅ Initializing orbital transform and modals');
 
 
-    };
+};
 
 // ============================================
 // ENTERPRISE TRANSFORM - ORBITAL INTERACTION
@@ -2561,8 +2603,8 @@ if (typeof initializeAllSystems !== 'undefined') {
  * @returns {boolean}
  */
 function isMobileDevice() {
-    return window.innerWidth <= 768 || 
-           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return window.innerWidth <= 768 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 /**
@@ -2757,7 +2799,7 @@ function initMobileEnterprise() {
     console.log('📱 Initializing mobile enterprise (static mode)');
 
     const floatingCards = document.querySelectorAll('.floating-card');
-    
+
     // Remove all inline transforms on mobile
     floatingCards.forEach(card => {
         card.style.transform = '';
@@ -2859,14 +2901,14 @@ let enhancedCleanup = null;
  */
 function initEnterpriseTransform() {
     const isMobile = isMobileDevice();
-    
+
     console.log(`\n🚀 Initializing Enterprise Transform - ${isMobile ? 'MOBILE' : 'DESKTOP'} mode\n`);
 
     if (isMobile) {
         // Mobile: No animations, static layout
         initMobileEnterprise();
         initMobileTooltips();
-        
+
         // Disable smooth scrolling on mobile
         document.documentElement.style.scrollBehavior = 'auto';
     } else {
@@ -2884,12 +2926,12 @@ function initEnterpriseTransform() {
  */
 function cleanupEnterpriseTransform() {
     console.log('🧹 Cleaning up enterprise transform');
-    
+
     if (parallaxCleanup && typeof parallaxCleanup === 'function') {
         parallaxCleanup();
         parallaxCleanup = null;
     }
-    
+
     if (enhancedCleanup && typeof enhancedCleanup === 'function') {
         enhancedCleanup();
         enhancedCleanup = null;
@@ -2908,7 +2950,7 @@ window.addEventListener('orientationchange', () => {
     clearTimeout(orientationChangeTimer);
     orientationChangeTimer = setTimeout(() => {
         console.log('🔄 Orientation changed - reinitializing');
-        
+
         cleanupEnterpriseTransform();
         setViewportHeight(); // Update height on orientation change
         initEnterpriseTransform();
@@ -2925,16 +2967,16 @@ window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
         const currentWidth = window.innerWidth;
-        
+
         // Only reinitialize if crossing mobile/desktop breakpoint
-        if ((lastWidth <= 768 && currentWidth > 768) || 
+        if ((lastWidth <= 768 && currentWidth > 768) ||
             (lastWidth > 768 && currentWidth <= 768)) {
-            
+
             console.log('📱➡️🖥️ Breakpoint crossed - reinitializing');
-            
+
             cleanupEnterpriseTransform();
             initEnterpriseTransform();
-            
+
             lastWidth = currentWidth;
         }
     }, 250);
@@ -2949,13 +2991,13 @@ window.addEventListener('resize', () => {
  */
 function initializeAll() {
     console.log('📄 DOM Ready - Starting initialization');
-    
+
     // Set viewport height ONCE on load
     setViewportHeight();
-    
+
     // Initialize enterprise transform
     initEnterpriseTransform();
-    
+
     // Initialize orbital transform if it exists
     if (typeof initOrbitalTransform === 'function') {
         initOrbitalTransform();
