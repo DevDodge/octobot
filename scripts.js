@@ -879,6 +879,100 @@ function initPortfolioModal() {
     </ul>
 </div>
 
+</div>
+
+            `
+        },
+        'F.Brakes': {
+            title: 'F.Brakes Success Story',
+            titleAr: 'قصة نجاح F.Brakes ',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+    <ul>
+        <li>
+            <span class="en">+90% higher efficiency in lead management</span>
+            <span class="ar">+90٪ كفاءة أعلى في إدارة العملاء والمتابعات</span>
+        </li>
+        <li>
+            <span class="en">5K+ leads organized automatically in Trello</span>
+            <span class="ar">أكثر من 5000 عميل تم تنظيمهم تلقائيًا عبر Trello</span>
+        </li>
+        <li>
+            <span class="en">Sales team productivity boosted with AI assistant</span>
+            <span class="ar">زيادة إنتاجية فريق المبيعات بفضل المساعد الذكي</span>
+        </li>
+    </ul>
+</div>
+
+</div>
+
+            `
+        },
+        'Focus ix': {
+            title: 'Focus ix Success Story',
+            titleAr: 'قصة نجاح Focus ix',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+   
+<ul>
+    <li>
+        <span class="en">+90% faster response and order processing</span>
+        <span class="ar">+90٪ سرعة أكبر في الرد ومعالجة الطلبات</span>
+    </li>
+    <li>
+        <span class="en">1,200+ successful orders every month</span>
+        <span class="ar">أكثر من 1200 طلب ناجح شهريًا</span>
+    </li>
+    <li>
+        <span class="en">Customer satisfaction boosted with the AI assistant</span>
+        <span class="ar">ارتفاع رضا العملاء بفضل المساعد الذكي</span>
+    </li>
+</ul>
+
+
+</div>
+
+</div>
+
+            `
+        },
+        'Healthy Dental Clinic': {
+            title: 'Healthy Dental Clinic Success Story',
+            titleAr: 'قصة نجاح Healthy Dental Clinic',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+   
+<ul>
+    <li>
+        <span class="en">+90% faster appointment scheduling</span>
+        <span class="ar">+90٪ حجوزات أسرع للمواعيد</span>
+    </li>
+    <li>
+        <span class="en">500+ new happy smiles created</span>
+        <span class="ar">أكثر من 500 ابتسامة جديدة وسعيدة</span>
+    </li>
+    <li>
+        <span class="en">Patient satisfaction improved with our dental care</span>
+        <span class="ar">ارتفاع رضا المرضى بفضل رعايتنا المتخصصة للأسنان</span>
+    </li>
+</ul>
+
+
+
+</div>
+
             `
         },
         // Default for any missing case studies
@@ -891,6 +985,8 @@ function initPortfolioModal() {
                 </div>
             `
         }
+
+
     };
 
     // Use event delegation for dynamically added buttons
