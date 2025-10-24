@@ -973,6 +973,142 @@ function initPortfolioModal() {
 
 </div>
 
+</div>
+
+            `
+        },
+        'عيادة د.صلاح شعرواي': {
+            title: 'عيادة د.صلاح شعرواي Success Story',
+            titleAr: 'قصة نجاح عيادة د.صلاح شعرواي',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+   
+<ul>
+    <li>
+        <span class="en">+94% improvement in clinic efficiency</span>
+        <span class="ar">+94٪ كفاءة أعلى في إدارة العيادة</span>
+    </li>
+    <li>
+        <span class="en">Faster and more accurate appointment booking</span>
+        <span class="ar">حجز مواعيد أسرع وبدقة أعلى</span>
+    </li>
+    <li>
+        <span class="en">Patients enjoy smoother communication with the AI assistant</span>
+        <span class="ar">تجربة تواصل أكثر سلاسة بفضل المساعد الذكي</span>
+    </li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+            `
+        },
+        'مدارس طلائع المستقبل الخاصة': {
+            title: 'مدارس طلائع المستقبل الخاصة Success Story',
+            titleAr: 'قصة نجاح مدارس طلائع المستقبل الخاصة',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+   
+<ul>
+    <li>
+        <span class="en">+94% improvement in parent communication efficiency</span>
+        <span class="ar">+94٪ تحسّن في كفاءة التواصل مع أولياء الأمور</span>
+    </li>
+    <li>
+        <span class="en">Smarter and more organized admissions process</span>
+        <span class="ar">تنظيم وذكاء أكبر في إدارة التسجيلات</span>
+    </li>
+    <li>
+        <span class="en">Parents enjoy faster responses with the AI assistant</span>
+        <span class="ar">أولياء الأمور بيحصلوا على ردود أسرع بفضل المساعد الذكي</span>
+    </li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+            `
+        },
+        'EPICO Chemicals': {
+            title: 'EPICO Chemicals Success Story',
+            titleAr: 'قصة نجاح EPICO Chemicals',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+   
+<ul>
+    <li>
+        <span class="en">+96% accuracy in agricultural product recommendations</span>
+        <span class="ar">+96٪ دقة في توصيات المنتجات الزراعية</span>
+    </li>
+    <li>
+        <span class="en">Smart order and distribution management</span>
+        <span class="ar">ذكاء في إدارة الطلبات والتوزيع</span>
+    </li>
+    <li>
+        <span class="en">Farmers and distributors enjoy faster communication with the AI assistant</span>
+        <span class="ar">تجربة تواصل أسرع وأسهل للمزارعين والموزعين بفضل المساعد الذكي</span>
+    </li>
+</ul>
+
+
+
+
+</div>
+
+</div>
+
+            `
+        },
+        'New Collection FOLO': {
+            title: 'New Collection FOLO Success Story',
+            titleAr: 'قصة نجاح New Collection FOLO',
+            content: `
+                <div class="portfolio-detail">
+    <h3>
+        <span class="en">Results</span>
+        <span class="ar">النتائج</span>
+    </h3>
+   
+<ul>
+    <li>
+        <span class="en">+94% faster response and order handling</span>
+        <span class="ar">+94٪ سرعة في الرد وإدارة الطلبات</span>
+    </li>
+    <li>
+        <span class="en">Smarter sales and customer service management</span>
+        <span class="ar">ذكاء في إدارة المبيعات وخدمة العملاء</span>
+    </li>
+    <li>
+        <span class="en">Higher customer satisfaction and stronger brand loyalty</span>
+        <span class="ar">رضا العملاء وولاء أقوى للبراند</span>
+    </li>
+</ul>
+
+
+
+
+
+</div>
+
+
             `
         },
         // Default for any missing case studies
