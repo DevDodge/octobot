@@ -1125,48 +1125,73 @@ function initPortfolioModal() {
 
     };
 
-    // Use event delegation for dynamically added buttons
-    document.addEventListener('click', function (e) {
-        // Check if clicked element is a details button or its child
-        const detailsBtn = e.target.closest('.details-btn');
+    // Use event delegation for dynamically added buttons - add touch support
+    ['click', 'touchend'].forEach(eventType => {
+        document.addEventListener(eventType, function (e) {
+            // Check if clicked element is a details button or its child
+            const detailsBtn = e.target.closest('.details-btn');
 
-        if (detailsBtn) {
-            e.preventDefault();
-            e.stopPropagation();
+            if (detailsBtn) {
+                e.preventDefault();
+                e.stopPropagation();
 
-            const clientKey = detailsBtn.dataset.client;
-            console.log('Opening modal for client:', clientKey);
+                // Prevent double-firing on mobile
+                if (eventType === 'touchend') {
+                    e.preventDefault();
+                    // Check if this touch event was already handled
+                    if (detailsBtn.dataset.touchHandled === 'true') {
+                        detailsBtn.dataset.touchHandled = 'false';
+                        return;
+                    }
+                    detailsBtn.dataset.touchHandled = 'true';
+                    // Reset the flag after a short delay
+                    setTimeout(() => {
+                        detailsBtn.dataset.touchHandled = 'false';
+                    }, 300);
+                }
 
-            const details = portfolioDetails[clientKey] || portfolioDetails['default'];
+                const clientKey = detailsBtn.dataset.client;
+                console.log('Opening modal for client:', clientKey);
 
-            if (modalContent) {
-                modalContent.innerHTML = `
+                const details = portfolioDetails[clientKey] || portfolioDetails['default'];
+
+                if (modalContent) {
+                    modalContent.innerHTML = `
                     <h2 class="gradient-text">
                         <span class="en">${details.title}</span>
                         <span class="ar">${details.titleAr}</span>
                     </h2>
                     ${details.content}
                 `;
-            }
+                }
 
-            // Show modal
-            portfolioModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+                // Show modal
+                portfolioModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
     });
 
     // Close modal handlers
     if (modalClose) {
-        modalClose.addEventListener('click', () => {
-            portfolioModal.classList.remove('active');
-            document.body.style.overflow = '';
+        ['click', 'touchend'].forEach(eventType => {
+            modalClose.addEventListener(eventType, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
 
     if (modalBackdrop) {
-        modalBackdrop.addEventListener('click', () => {
-            portfolioModal.classList.remove('active');
-            document.body.style.overflow = '';
+        ['click', 'touchend'].forEach(eventType => {
+            modalBackdrop.addEventListener(eventType, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
 
@@ -2039,25 +2064,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle info button clicks
     document.querySelectorAll('.info-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const planKey = btn.dataset.plan;
-            const planData = planDetails[planKey];
+        ['click', 'touchstart'].forEach(eventType => {
+            btn.addEventListener(eventType, (e) => {
+                e.preventDefault(); // Prevent double-firing on mobile
+                e.stopPropagation();
+                const planKey = btn.dataset.plan;
+                const planData = planDetails[planKey];
 
-            if (planData) {
-                // Update modal icon
-                modalIcon.innerHTML = `<i class="${planData.icon}"></i>`;
+                if (planData) {
+                    // Update modal icon
+                    modalIcon.innerHTML = `<i class="${planData.icon}"></i>`;
 
-                // Update modal title
-                modalTitle.innerHTML = `
+                    // Update modal title
+                    modalTitle.innerHTML = `
                     <span class="en">${planData.titleEn}</span>
                     <span class="ar">${planData.titleAr}</span>
                 `;
 
-                // Generate features HTML
-                let featuresHTML = '<ul class="modal-features">';
-                planData.features.forEach(feature => {
-                    featuresHTML += `
+                    // Generate features HTML
+                    let featuresHTML = '<ul class="modal-features">';
+                    planData.features.forEach(feature => {
+                        featuresHTML += `
                         <li>
                             <i class="${feature.icon}"></i>
                             <div class="feature-content">
@@ -2072,18 +2099,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </li>
                     `;
-                });
-                featuresHTML += '</ul>';
+                    });
+                    featuresHTML += '</ul>';
 
-                modalBody.innerHTML = featuresHTML;
+                    modalBody.innerHTML = featuresHTML;
 
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+                    // Show modal
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
         });
     });
-
     // Close modal handlers
     if (modalClose) {
         modalClose.addEventListener('click', () => {
